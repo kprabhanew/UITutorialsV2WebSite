@@ -1,0 +1,3391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Intro</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="angularjs_definitions.html">Definition</a></li>
+          <li><a href="angularjs_programs.html">Programs</a></li>
+          <li><a href="angularjs_examples.html">Examples</a></li>
+          <li><a href="angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">          
+          <li><a href="jQuery/advancedJs.html">Advanced JS</a></li>
+          <li><a href="ajax.html">Ajax</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+<div class="col-sm-2" id="myScrollspy">
+  <nav >
+    <ul class="nav nav-pills nav-stacked left-menu" data-offset-top="50" data-spy="affix">
+      <li><a href="#navbar-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Directives </a></li>
+      <li><a href="#dropdown-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Transclusion</a></li>
+      <li><a href="#tab-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Scope</a></li>
+       
+      <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Section 4 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tabs</a></li>
+          <li><a href="#">Modal</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-9">
+<h1>Angular JS Introduction</h1>
+<h2>01 Basic Introduction
+<a href="pdf/01Introduction.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="intro"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#intro" href="#collapse22">
+        01 Basic Introduction</a>
+</h4>
+</div>
+
+<div id="collapse22" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html22">Html</a></li>
+  <li><a data-toggle="tab" href="#script22">Script</a></li>
+<li><a data-toggle="tab" href="#description22">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html22" class="tab-pane fade in active">
+    <pre>
+     &lt;body ng-app="sample"&gt; 
+    Sum of 1 + 2 is {{ 1 + 2}}
+  &lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script22" class="tab-pane fade">
+    <pre>
+    //--> 	"ng-app" stands for angular application.  
+		//		-It is the root of angular application (starting at the element associated, "body" in this case).  
+		//		-Usually one per web page / app (other workarounds available for multiple "ng-app")
+		//		-Cannot be nested
+		//		-Can be attached to any element, but usually to HTML or BODY
+		//		-Usually attached to an angular module (called "root module")
+
+		//-->	angular.module = all application logic under one umbrella. 
+		//		-passing second parameter means, you are creating new module
+		//		-empty square brackets means, the module has no dependencies (to load)
+		//		-currently, the "sample" module is attached as "root module" (using ng-app)
+        angular.module("sample", []); 		
+		//-->	not passing second parameter means, 
+		//		-search for and use existing module, which was already created earlier or in another file
+		//angular.module("sample"); 
+
+		//-->	{{ }} = angular expression
+		//		javascript-like code snippets, evaulated by angular
+		//		control flow statements, functions etc. NOT allowed
+	</pre>
+  </div>
+  <div id="description22" class="tab-pane fade">
+    <pre>
+    //--> 	"ng-app" stands for angular application.  
+		//		-It is the root of angular application (starting at the element associated, "body" in this case).  
+		//		-Usually one per web page / app (other workarounds available for multiple "ng-app")
+		//		-Cannot be nested
+		//		-Can be attached to any element, but usually to HTML or BODY
+		//		-Usually attached to an angular module (called "root module")
+
+		//-->	angular.module = all application logic under one umbrella. 
+		//		-passing second parameter means, you are creating new module
+		//		-empty square brackets means, the module has no dependencies (to load)
+		//		-currently, the "sample" module is attached as "root module" (using ng-app)
+        angular.module("sample", []); 		
+		//-->	not passing second parameter means, 
+		//		-search for and use existing module, which was already created earlier or in another file
+		//angular.module("sample"); 
+
+		//-->	{{ }} = angular expression
+		//		javascript-like code snippets, evaulated by angular
+		//		control flow statements, functions etc. NOT allowed
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+
+
+<h2>02 What are Controllers
+<a href="pdf/02 What are Controllers and how to use them.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="controller"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#controller" href="#collapse23">
+        02 What are Controllers</a>
+</h4>
+</div>
+
+<div id="collapse23" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html23">Html</a></li>
+  <li><a data-toggle="tab" href="#script23">Script</a></li>
+
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html23" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp as o"&gt; &lt;!-- 'o' is an instance of 'emp' --&gt;
+    Hello {{o.Name}}, looks like you earn {{this.Sal}} per month!
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script23" class="tab-pane fade">
+    <pre>
+    //defining a controller and instantiating a controller
+
+  var sample = angular.module("sample", []); //creating module
+
+  //create controller and its definition
+  sample.controller("emp", function() {
+    this.Name = "Jag";
+    this.Sal = 4500;
+  });
+	</pre>
+  </div>
+  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+
+
+<h1>03 Understanding scope
+<a href="pdf/03 Understanding $scope and its relation with Controller.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h1>
+<div class="panel-group" id="basic-scope"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse24">
+        Example : 02-Using Scope</a>
+</h4>
+</div>
+
+<div id="collapse24" class="panel-collapse collapse ">
+      <div class="panel-body">
+
+<p>Implicit controller instance and using $scope in a controller</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html24">Html</a></li> 
+  <li><a data-toggle="tab" href="#script24">Script</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html24" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Hello {{Name}}!
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script24" class="tab-pane fade">
+    <pre>
+    //Implicit controller instance and using $scope in a controller
+  var sample = angular.module("sample", []);
+  sample.controller("emp", function($scope) {
+    $scope.Name = "Jag";
+  });
+    
+	</pre>
+  </div> 
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse25">
+        Example : 03-Recommended Scope Usage</a>
+</h4>
+</div>
+
+<div id="collapse25" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>using recommended pattern to use "$scope" (mainly to work even after minimizing js)</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html25">Html</a></li> 
+  <li><a data-toggle="tab" href="#script25">Script</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html25" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+    &lt;div ng-controller="emp"&gt; Hello {{Name}}, your salary is {{Sal}} per month and is {{Sal * 12}} per annum! &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script25" class="tab-pane fade">
+    <pre>
+    //using recommended pattern to use "$scope" (mainly to work even after minimizing js)
+        var sample = angular.module("sample", []);
+        sample.controller("emp", ["$scope", function (s) { // "s" is reference to "$scope"
+            s.Name = "Jag";
+            s.Sal = 4500;
+  }]);    
+	</pre>
+  </div> 
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse26">
+        Example : 04-Scope With Methods</a>
+</h4>
+</div>
+
+<div id="collapse26" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>using methods in scope</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html26">Html</a></li> 
+  <li><a data-toggle="tab" href="#script26">Script</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html26" class="tab-pane fade in active">
+    <pre>
+   &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Hello {{Name}}, your annual salary is {{getAnnualSal()}}!
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script26" class="tab-pane fade">
+    <pre>
+    //using methods in scope
+  var sample = angular.module("sample", []);
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+    $scope.Sal = 4500;
+    $scope.getAnnualSal = function(){
+      return (this.Sal) * 12;
+    };
+  }]);    
+	</pre>
+  </div> 
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse27">
+        Example : 05-Multiple Controllers</a>
+</h4>
+</div>
+
+<div id="collapse27" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>Multiple controllers in a module</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html27">Html</a></li> 
+  <li><a data-toggle="tab" href="#script27">Script</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html27" class="tab-pane fade in active">
+    <pre>
+   &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Hello {{Name}}, your annual salary is {{getAnnualSal()}}!
+  &lt;/div&gt;
+  &lt;div ng-controller="customerInfo"&gt;
+    Hello {{Name}}, looks like you live in {{City}}!
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script27" class="tab-pane fade">
+    <pre>
+    //multiple controllers in a module
+  var sample = angular.module("sample", []);
+
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+    $scope.Sal = 4500;
+    $scope.getAnnualSal = function(){
+      return (this.Sal) * 12;
+    };
+  }]);
+
+  sample.controller("customerInfo", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+    $scope.City = "Vienna";
+  }]);  
+	</pre>
+  </div> 
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse28">
+        Example : 06-Hybrid Syntax</a>
+</h4>
+</div>
+
+<div id="collapse28" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>Hybrid syntax oc $scope and "controller as"</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html28">Html</a></li> 
+  <li><a data-toggle="tab" href="#script28">Script</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html28" class="tab-pane fade in active">
+    <pre>
+   &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp as o"&gt; &lt;!--using controller as --&gt;
+    Hello {{o.Name}}, your annual salary is {{o.getAnnualSal()}}!
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script28" class="tab-pane fade">
+    <pre>
+    //Hybrid syntax oc $scope and "controller as"
+
+  //Technically, "controller as" object is automatically made part of $scope
+  //but for our clarity, we can still use scope and "controller as" as below
+  var sample = angular.module("sample", []);
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.o = this; //controller as "o" becomes the member of $scope
+    this.Name = "Jag";
+    this.Sal = 4500;
+    this.getAnnualSal = function(){
+      return (this.Sal) * 12;
+    };
+  }]);
+	</pre>
+  </div> 
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+</div> <!-- Panel Group End -->
+
+<h2>04 Understanding Scope Inheritance
+<a href="pdf/04 Understanding Scope Inheritance.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="basic-scope"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse29">
+        Example : 07-scope inheritance</a>
+</h4>
+</div>
+
+<div id="collapse29" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>scope hierarchy And child scope merged to parent (using prototypal inheritance)</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html29">Html</a></li>
+  <li><a data-toggle="tab" href="#script29">Script</a></li>
+<li><a data-toggle="tab" href="#description29">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html29" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Employee Details of {{Name}}:
+    &lt;div ng-controller="empDetails"&gt;
+      &lt;!-- parent scope is merged to child scope
+        - child properties get the priority --&gt;
+      &lt;strong&gt;{{Name}}&lt;/strong&gt; earns {{Sal}} and works in {{Dept}} department.
+      &lt;div ng-controller="empPayCheck"&gt;
+        Taxes: {{getTaxes()}}&lt;br&gt;
+        Net: {{getNet()}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script29" class="tab-pane fade">
+    <pre>
+    //scope hierarchy
+  //child scope merged to parent (using prototypal inheritance)
+
+  var sample = angular.module("sample", []);
+
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+  }]);
+
+  sample.controller("empDetails", ["$scope", function($scope) {
+    $scope.Sal = 3400;
+    $scope.Dept = "Sales";
+  }]);
+
+  sample.controller("empPayCheck", ["$scope", function($scope) {
+    $scope.getTaxes = function(){
+      return $scope.Sal * 30 / 100;
+    };
+    $scope.getNet = function(){
+      return $scope.Sal - $scope.getTaxes();
+    };
+  }]);
+	</pre>
+  </div>
+  <div id="description29" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+<h1>05 Understanding RootScope ($rootScope)
+<a href="pdf/05 Understanding RootScope ($rootScope).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h1>
+<div class="panel-group" id="root-scope"> <!-- Panel Group Start -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#root-scope" href="#collapse30">
+        Example : The scope available at module level</a>
+</h4>
+</div>
+
+<div id="collapse30" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html30">Html</a></li>
+  <li><a data-toggle="tab" href="#script30">Script</a></li>
+<li><a data-toggle="tab" href="#description30">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html30" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Employee Details of {{Name}}:
+    &lt;div ng-controller="empDetails"&gt;
+      &lt;!-- parent scope is merged to child scope
+        - child properties get the priority --&gt;
+      &lt;strong&gt;{{Name}}&lt;/strong&gt; earns {{Sal}} and works in {{Dept}} department.
+      &lt;div ng-controller="empPayCheck"&gt;
+        Taxes: {{getTaxes()}}&lt;br&gt;
+        Net: {{getNet()}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script30" class="tab-pane fade">
+    <pre>
+     //root scope
+  //the scope available at module level
+
+  var sample = angular.module("sample", []);
+
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+  }]);
+
+  sample.controller("empDetails", ["$scope", "$rootScope", function($scope, $rootScope) {
+    $scope.Sal = 3400;
+    $scope.Dept = "Sales";
+    $rootScope.TaxPercent = 30;
+  }]);
+
+  sample.controller("empPayCheck", ["$scope", "$rootScope", function($scope, $rootScope) {
+    $scope.getTaxes = function(){
+      return $scope.Sal * $rootScope.TaxPercent / 100;
+    };
+    $scope.getNet = function(){
+      return $scope.Sal - $scope.getTaxes();
+    };
+  }]);
+	</pre>
+  </div>
+  <div id="description30" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#root-scope" href="#collapse31">
+        Example : Initialize at module</a>
+</h4>
+</div>
+
+<div id="collapse31" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html31">Html</a></li>
+  <li><a data-toggle="tab" href="#script31">Script</a></li>
+<li><a data-toggle="tab" href="#description31">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html31" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="sample"&gt;
+  &lt;div ng-controller="emp"&gt;
+    Employee Details of {{Name}}:
+    &lt;div ng-controller="empDetails"&gt;
+      &lt;!-- parent scope is merged to child scope
+        - child properties get the priority --&gt;
+      &lt;strong&gt;{{Name}}&lt;/strong&gt; earns {{Sal}} and works in {{Dept}} department.
+      &lt;div ng-controller="empPayCheck"&gt;
+        Taxes: {{getTaxes()}}&lt;br&gt;
+        Net: {{getNet()}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script31" class="tab-pane fade">
+    <pre>
+     var sample = angular.module("sample", []).run(["$rootScope", function($rootScope){
+    $rootScope.TaxPercent = 30;
+  }]);
+
+  sample.controller("emp", ["$scope", function($scope) {
+    $scope.Name = "Jag";
+  }]);
+
+  sample.controller("empDetails", ["$scope", function($scope) {
+    $scope.Sal = 3400;
+    $scope.Dept = "Sales";
+  }]);
+
+  sample.controller("empPayCheck", ["$scope", "$rootScope", function($scope, $rootScope) {
+    $scope.getTaxes = function(){
+      return $scope.Sal * $rootScope.TaxPercent / 100;
+    };
+    $scope.getNet = function(){
+      return $scope.Sal - $scope.getTaxes();
+    };
+  }]);
+	</pre>
+  </div>
+  <div id="description31" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+<h2>06 Understanding (one / two-way, one-time) Data Binding
+<a href="pdf/06 Understanding (one-way, two-way, one-time) Data Binding.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="data-binding"> <!-- Panel Group Start -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#data-binding" href="#collapse32">
+        Example  : 01 ng-bind </a>
+</h4>
+</div>
+
+<div id="collapse32" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html31">Html</a></li>
+  <li><a data-toggle="tab" href="#script31">Script</a></li>
+<li><a data-toggle="tab" href="#description31">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html31" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div&gt;
+			Value of a is {{a}}&lt;br&gt;
+			Value of b is {{b}}&lt;br&gt;
+		&lt;/div&gt;
+		
+		&lt;hr&gt;
+		Value of a is &lt;span ng-bind="a"&gt;&lt;/span&gt;&lt;br&gt;
+		Value of b is &lt;span ng-bind="b"&gt;&lt;/span&gt;&lt;br&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script31" class="tab-pane fade">
+    <pre>
+    var app = angular.module("app", []);
+app.controller("emp", ["$scope", function($scope){
+	$scope.a = 10;
+	$scope.b = 20;
+}]);
+	</pre>
+  </div>
+  <div id="description31" class="tab-pane fade">
+    <pre>
+    <!-- 
+	demonstrates "ng-bind" for one-way binding
+	- class "ng-binding" gets added (at run-time) to container element which has angular expressions
+	- class "ng-binding" gets added (at run-time) to elements having "ng-bind" attribute
+	- works only with text based HTML elements but not INPUT based elements
+-->
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#data-binding" href="#collapse33">
+        Example :  02 ng-click </a>
+</h4>
+</div>
+
+<div id="collapse33" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html32">Html</a></li>
+  <li><a data-toggle="tab" href="#script32">Script</a></li>
+<li><a data-toggle="tab" href="#description32">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html32" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div&gt;
+			Value of a is {{a}}&lt;br&gt;
+			Value of b is {{b}}&lt;br&gt;
+			Sum = {{sum}}
+		&lt;/div&gt;
+		&lt;button ng-click="doDoubleSum()"&gt;Calculate&lt;/button&gt;&lt;br&gt;
+		Value of a is {{::a}}&lt;br&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script32" class="tab-pane fade">
+    <pre>
+    var app = angular.module("app", []);
+app.controller("emp", ["$scope", function($scope){
+	$scope.a = 10;
+	$scope.b = 20;
+
+	$scope.doDoubleSum = function(){		
+		$scope.a = $scope.a * 2;
+		$scope.b = $scope.b * 2;
+		$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+	};
+}]);
+	</pre>
+  </div>
+  <div id="description32" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#data-binding" href="#collapse33">
+        Example : 03- ng-model</a>
+</h4>
+</div>
+
+<div id="collapse33" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html33">Html</a></li>
+  <li><a data-toggle="tab" href="#script33">Script</a></li>
+<li><a data-toggle="tab" href="#description33">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html33" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div&gt;
+			Value of a is {{a}}, 
+			but you can change &lt;input type=text ng-model="a" /&gt; &gt;br&gt;
+			
+			Value of b is {{b}}
+			but you can change &lt;input type=text ng-model="b" /&gt; &gt;br&gt;
+
+			Sum = {{sum}}
+		&lt;/div&gt;
+		&lt;button ng-click="doSum()"&lt;Calculate&gt;/button&gt;&lt;br&gt;
+		Value of a is {{::a}}&lt;br&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script33" class="tab-pane fade">
+    <pre>
+    var app = angular.module("app", []);
+app.controller("emp", ["$scope",function($scope){
+	$scope.a = 10;
+	$scope.b = 20;
+
+	$scope.doSum = function(){		
+		$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+	};
+}]);
+	</pre>
+  </div>
+  <div id="description33" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+
+
+<h2>08 Developing Custom Services (factory -service-provider)
+<a href="pdf/08 Developing Custom Services (factory -service-provider).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="custom-services"> <!-- Panel Group Start -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#custom-services" href="#collapse34">
+        Example : 01- factory -service-provider</a>
+</h4>
+</div>
+
+<div id="collapse34" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html34">Html</a></li>
+  <li><a data-toggle="tab" href="#script34">Script</a></li>
+<li><a data-toggle="tab" href="#service34">Service</a></li>  
+<li><a data-toggle="tab" href="#factory34">Factory</a></li>  
+<li><a data-toggle="tab" href="#provider34">Provider</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html34" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div&gt;
+			Value of a is {{a}},
+			but you can change
+			&lt;input type=text ng-model="a" /&gt; &lt;br&gt;
+
+			Value of b is {{b}},
+			but you can change
+			&lt;input type=text ng-model="b" /&gt; &lt;br&gt;
+
+		&lt;/div&gt;
+		Sum = {{sum}}&lt;br&gt;
+		&lt;button ng-click="doSum()"&gt;Calculate&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script34" class="tab-pane fade">
+    <pre>
+    //using factory service syntax
+var app = angular.module("app", []);
+
+//app.controller('emp', ['$scope', function($scope){
+//	$scope.a = 10;
+//	$scope.b = 20;
+//	
+//	$scope.doSum = function(){
+//		$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+//		
+//	};
+//}])
+
+app.controller('emp', ['$scope','calcFactory',function($scope,calcFactory){
+    $scope.a = 10;
+    $scope.b = 20;
+    
+    $scope.doSum = function(){
+        //Synchronous Way
+        //$scope.sum = calcFactory.getSum($scope.a, $scope.b);
+        
+        //Asynchronous 
+        calcFactory.getSum($scope.a, $scope.b, function(r){
+            $scope.sum = r;
+        })
+    }        
+}]);
+
+//Extract Bussiness Logic in to separate service
+app.factory('calcFactory', ['$http', '$log',function($http, $log){
+    $log.log('instanting calcfactroy');
+    
+    var oCalcFactory = {};
+    //Synchronous Way
+    //    oCalcFactory.getSum = function(a,b){
+    //        return parseInt(a)+parseInt(b);
+    //    }
+        
+    //Asynchronous Method
+    oCalcFactory.getSum = function(a,b, cb){
+        var r = parseInt(a)  + parseInt(b);
+        cb(r);
+    }   
+    return oCalcFactory;
+}]);
+	</pre>
+  </div>
+  <div id="service34" class="tab-pane fade">
+    <pre>
+    //using service syntax
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', 'calcService', function($scope, calcService){
+	$scope.a = 10;
+	$scope.b = 20;
+	
+	$scope.doSum = function(){
+		//$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+		calcService.getSum($scope.a, $scope.b, function(data){
+			$scope.sum = data;	
+		});
+	};
+}])
+
+app.service('calcService', ['$http', '$log', function($http, $log){
+	$log.log("instantiating calcService..");
+	this.getSum = function(a, b, cb){
+		$http({
+			url: 'http://localhost:4467/Sum?a=' + a + '&b=' + b,
+			method: 'GET'
+		})
+		.then(function(resp){
+			//success function
+			$log.log(resp.data);
+			cb(resp.data);
+		}, function(resp){
+			//failure function
+			$log.error("ERROR occurred");
+		});
+	};
+}]);
+	</pre>
+  </div> 
+  <div id="factory34" class="tab-pane fade">
+    <pre>
+    //using factory service syntax
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', 'calcFactory', function($scope, calcFactory){
+	$scope.a = 10;
+	$scope.b = 20;
+	
+	$scope.doSum = function(){
+		//$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+		calcFactory.getSum($scope.a, $scope.b, function(data){
+			$scope.sum = data;	
+		});
+	};
+}])
+
+app.factory('calcFactory', ['$http', '$log', function($http, $log){
+	$log.log("instantiating calcFactory..");
+	var oCalcService = {};	
+	oCalcService.getSum = function(a, b, cb){
+		$http({
+			url: 'http://localhost:4467/Sum?a=' + a + '&b=' + b,
+			method: 'GET'
+		})
+		.then(function(resp){
+			//success function
+			$log.log(resp.data);
+			cb(resp.data);
+		}, function(resp){
+			//failure function
+			$log.error("ERROR occurred");
+		});
+	};
+	return oCalcService;
+}]);
+	</pre>
+  </div> 
+  <div id="provider34" class="tab-pane fade">
+    <pre>
+    //using factory service syntax
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', 'calcService', function($scope, calcService){
+	$scope.a = 10;
+	$scope.b = 20;
+	
+	$scope.doSum = function(){
+		//$scope.sum = parseInt($scope.a) + parseInt($scope.b);
+		calcService.getSum($scope.a, $scope.b, function(data){
+			$scope.sum = data;	
+		});
+	};
+}]);
+
+app.provider('calcService', function(){
+	
+	var baseUrl = '';
+	this.config = function(url){
+		baseUrl = url;
+	};
+
+	this.$get = ['$http', '$log', function($http, $log){
+		$log.log("instantiating calcService..");
+		var oCalcService = {};	
+		oCalcService.getSum = function(a, b, cb){
+			$http({
+				url: baseUrl + '/Sum?a=' + a + '&b=' + b,
+				method: 'GET'
+			})
+			.then(function(resp){
+				//success function
+				$log.log(resp.data);
+				cb(resp.data);
+			}, function(resp){
+				//failure function
+				$log.error("ERROR occurred");
+			});
+		};
+		return oCalcService;		
+	}];
+
+});
+
+app.config(["calcServiceProvider", function(calcServiceProvider) {
+	calcServiceProvider.config('http://localhost:4467');
+}]);
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#custom-services" href="#collapse35">
+        Example : Factory With Different Way</a>
+</h4>
+</div>
+
+<div id="collapse35" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html37">Html</a></li>
+  <li><a data-toggle="tab" href="#script37">Script</a></li>
+<li><a data-toggle="tab" href="#factory37">Factory</a></li> 
+<li><a data-toggle="tab" href="#serviceFactory37">Service Vs Factory</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html37" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="myApp" ng-controller="myController"&gt;
+    &lt;h3&gt;Using Service&lt;/h3&gt;
+    &lt;button ng-click="HelloService()"&gt;Hello Service&lt;/button&gt;
+    &lt;button ng-click="SumService()"&gt;Sum Service &lt;/button&gt;
+    &lt;strong&gt;&lt;div ng-bind="serviceOutput"&gt;&lt;/div&gt;&lt;/strong&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script37" class="tab-pane fade">
+    <pre>
+    app.controller("myController", function($scope, myProvider) {
+    //service function call with simple string
+    $scope.serviceOutput = "Look for service output here.";
+    $scope.HelloService = function() {
+        $scope.serviceOutput = myFactory.Hello();
+    }
+    $scope.SumService = function() {
+        $scope.serviceOutput = "The sum is : " + myFactory.Sum(1, 2);
+    }
+
+})
+	</pre>
+  </div>
+  <div id="factory37" class="tab-pane fade">
+    <pre>
+    var app = angular.module("myApp", []);
+
+function MyObject() { //Added our object constructor
+
+    this.Hello = function() {
+        return "Hello I am from Factory..!";
+    }
+
+    this.Sum = function(a, b) {
+        return a + b + 10;
+    }
+
+}
+
+app.factory("myFactory", function() {
+    return new MyObject(); // CREATE an instance of our object
+})
+
+//If we’re only instantiating it in one place we can use an anonymous function instead
+// app.factory("myFactory", function() {
+//     return new funtion() { // CREATE an instance of our object
+//         this.Hello = function() {
+//             return "Hello I am from Factory..!";
+//         }
+
+//         this.Sum = function(a, b) {
+//             return a + b + 10;
+//         }
+//     }
+// })
+	</pre>
+  </div>  
+  <div id="serviceFactory37" class="tab-pane fade">
+    <pre>
+    When to use one versus the other?
+
+The answer is you use the most specialize version that accomplishes your goal. Say for example you are returning an existing object defined somewhere else that takes constructor arguments. You can’t pass arguments to the service, so you would make the call with a factory instead.
+
+mod.factory("myProvider", function() {
+    console.log("Factory function called.");
+    return new SomeMessageBoxClass("custom argument");
+});
+    </pre>
+    </div>
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+
+<h2>09 ng-show ng-hide
+<a href="pdf/09 AngularJS ng-if, ng-repeat, ng-show, ng-hide.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="ng-show"> <!-- Panel Group Start -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#ng-show" href="#collapse36">
+        Example : 09 ng-if, ng-repeat, ng-show, ng-hide</a>
+</h4>
+</div>
+
+<div id="collapse36" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html35">Html</a></li>
+  <li><a data-toggle="tab" href="#script35">Script</a></li>
+<li><a data-toggle="tab" href="#description35">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html35" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+
+		&lt;form class="form-inline"&gt;
+			&lt;div class="form-group"&gt;
+				&lt;label&gt;Enter Employee No:&lt;/label&gt;
+				&lt;input type="text" class="form-control" ng-model="searchEmpno"&gt;
+			&lt;/div&gt;
+			&lt;button class="btn btn-primary" ng-click="doSearch()"&gt;Search&lt;/button&gt;
+		&lt;/form&gt;
+
+		&lt;hr&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Employee No&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{empno}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Name&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{ename}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Salary&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;
+				{{sal}}
+				&lt;!--
+				&lt;span ng-if="sal &gt; 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;--&gt;
+				&lt;!--
+				&lt;span ng-if="salAbove7k" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;--&gt;
+				&lt;!--
+				&lt;span ng-show="sal &gt; 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;--&gt;
+				&lt;span ng-hide="sal == undefined || sal &lt;= 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Hire Date&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{hiredate}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;DOB&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{dob}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Department&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{deptno}}&lt;/div&gt;
+		&lt;/div&gt;		
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script35" class="tab-pane fade">
+    <pre>
+    var app = angular.module("app", []);
+app.controller('emp', ['$scope', 'empService', function($scope, empService){
+	$scope.doSearch = function(){
+		empService.findEmployeeById($scope.searchEmpno, function(r){
+			$scope.empno = r.empno;
+			$scope.ename = r.ename;
+			$scope.sal = r.sal;
+			$scope.deptno = r.deptno;
+			$scope.hiredate = r.hiredate;
+			$scope.dob = r.dob;
+			$scope.salAbove7k = parseInt(r.sal) > 7000;
+		});		
+	};
+
+}]);
+
+app.service('empService', ['$http', '$log', function($http, $log){
+	this.findEmployeeById = function(empno, cb){
+		$http({
+			url: 'http://localhost:8000/api/employees/' + empno,
+			method: 'GET'
+		}).then(function(resp){
+			//$log.log(resp.data);
+			cb(resp.data);
+		},function(resp){
+			$log.error("ERROR occurred");
+		});
+	};
+}]);
+	</pre>
+  </div>
+  <div id="description35" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#ng-show" href="#collapse37">
+        Example : ng-show</a>
+</h4>
+</div>
+
+<div id="collapse37" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html36">Html</a></li>
+  <li><a data-toggle="tab" href="#script36">Script</a></li>
+<li><a data-toggle="tab" href="#description36">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html36" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;table class="table table-striped table-bordered table-condensed"&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;#&lt;/th&gt;
+					&lt;th&gt;Name&lt;/th&gt;
+					&lt;th&gt;Salary&lt;/th&gt;
+					&lt;th&gt;Dept&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tr ng-repeat="oEmp in employees"&gt;
+				&lt;td&gt;{{oEmp.empno}}&lt;/td&gt;
+				&lt;td&gt;{{oEmp.ename}}&lt;/td&gt;
+				&lt;td&gt;
+					{{oEmp.sal}}
+					&lt;span ng-if="oEmp.sal &gt; 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;
+				&lt;/td&gt;
+				&lt;td&gt;{{oEmp.deptno}}&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script36" class="tab-pane fade">
+    <pre>
+    var app = angular.module("app", []);
+app.controller('emp', ['$scope', 'empService', function($scope, empService){
+	empService.getEmployees(function(r){
+		$scope.employees = r;
+	});		
+}]);
+
+app.service('empService', ['$http', '$log', function($http, $log){
+	this.getEmployees = function(cb){
+		$http({
+			url: 'http://localhost:8000/api/employees',
+			method: 'GET'
+		}).then(function(resp){
+			//$log.log(resp.data);
+			cb(resp.data);
+		},function(resp){
+			$log.error("ERROR occurred");
+		});
+	};
+}]);
+	</pre>
+  </div>
+  <div id="description36" class="tab-pane fade">
+    <pre>
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+
+
+<h2>11 Custom Directives (Components) 
+<a href="pdf/11-12-13 Directives - Compile and Link in depth - Part 1 2.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></h2>
+<!-- Panel Start -->
+
+<div class="panel-group" id="accordion">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Example 1: Simple Directive</a>
+</h4>
+</div>
+
+<div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Html</a></li>
+  <li><a data-toggle="tab" href="#menu1">Script</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <pre>
+&lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div my-info-msg&gt;&lt;/div&gt;
+		&lt;my-info-msg&gt;&lt;/my-info-msg&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+    </pre>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <pre>
+//simple directive
+var app = angular.module("app", []);
+
+app.controller('emp', function() {
+	
+});
+
+app.directive('myInfoMsg', function() {
+	return {
+		template: "<strong>This is message</strong>"
+	};
+});
+    </pre>
+  </div>
+</div> <!-- Tab Content -->
+
+	  </div>
+    </div>
+</div> <!-- Panel 1 -->
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Example : 02-Using bindings from parent scope</a>
+</h4>
+</div>
+<div id="collapse3" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <!-- Example 2 -->
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html2">Html</a></li>
+  <li><a data-toggle="tab" href="#script2">Script</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html2" class="tab-pane fade in active">
+ <pre>
+  &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div my-info-msg&gt;&lt;/div&gt;
+		&lt;my-info-msg&gt;&lt;/my-info-msg&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+ </pre>
+  </div>
+  <div id="script2" class="tab-pane fade">
+    <pre>
+    //directives support bindings to scope directly
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', function($scope) {
+	$scope.msg = "this is message"	;
+}]);
+
+app.directive('myInfoMsg', function() {
+	return {
+		template: "<strong>{{msg}}</strong>"
+	};
+});
+    </pre>
+  </div>
+</div> <!-- Tab Content  2 -->
+	  </div>
+    </div>
+</div> <!-- Panel 2 -->
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+        Example : 03-Template in Script tag</a>
+</h4>
+</div>
+
+<div id="collapse4" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html3">Html</a></li>
+  <li><a data-toggle="tab" href="#script3">Script</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html3" class="tab-pane fade in active">
+  <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;script type="text/ng-template" id="my-info-msg.html"&gt;
+		&lt;strong&gt;{{msg}}&lt;/strong&gt;
+	&lt;/script&gt;
+	
+	&lt;div ng-controller="emp"&gt;		
+		&lt;my-info-msg&gt;&lt;/my-info-msg&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+  </div>
+  <div id="script3" class="tab-pane fade">
+    <pre>
+    //directive template in a separate &ltscript&gt; tag
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', function($scope) {
+	$scope.msg = "this is message"	;
+}]);
+
+app.directive('myInfoMsg', function() {
+	return {
+		templateUrl: "my-info-msg.html"
+	};
+});
+    </pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel4 End -->
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+        Example : 04-Template in separate file</a>
+</h4>
+</div>
+
+<div id="collapse5" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html4">Html</a></li>
+  <li><a data-toggle="tab" href="#script4">Script</a></li>
+  <li><a data-toggle="tab" href="#template4">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html4" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;	
+	&lt;div ng-controller="emp"&gt;		
+		&lt;my-info-msg&gt;&lt;/my-info-msg&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script4" class="tab-pane fade">
+    <pre>
+    //directive template in a separate &lt;script&gt; tag
+var app = angular.module("app", []);
+
+app.controller('emp', ['$scope', function($scope) {
+	$scope.msg = "this is message"	;
+}]);
+
+app.directive('myInfoMsg', function() {
+	return {
+		templateUrl: "my-info-msg.html"
+	};
+});
+	</pre>
+  </div>
+  <div id="template4" class="tab-pane fade">
+    <pre>
+    my-info-msg.html
+    &lt;strong&gt;{{msg}}&lt;/strong&gt;
+	</pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel5 End -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+        Example : 06-Integrating Ajax</a>
+</h4>
+</div>
+
+<div id="collapse6" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <p>Note : To run this example we need restul api</p>
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html5">Html</a></li>
+  <li><a data-toggle="tab" href="#script5">Script</a></li>
+  <li><a data-toggle="tab" href="#template5">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html5" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+
+		&lt;form class="form-inline"&gt;
+			&lt;div class="form-group"&gt;
+				&lt;label&gt;Enter Employee No:&lt;/label&gt;
+				&lt;input type="text" class="form-control" ng-model="searchEmpno"&gt;
+			&lt;/div&gt;
+			&lt;button class="btn btn-primary" ng-click="doSearch()"&gt;Search&lt;/button&gt;
+		&lt;/form&gt;
+		&lt;hr&gt;
+		&lt;div emp-details ng-if="empno != undefined"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script5" class="tab-pane fade">
+    <pre>
+    //with ajax
+var app = angular.module("app", []);
+app.controller('emp', ['$scope', 'empService', function($scope, empService){
+	$scope.doSearch = function(){
+		empService.findEmployeeById($scope.searchEmpno, function(r){
+			$scope.empno = r.empno;
+			$scope.ename = r.ename;
+			$scope.sal = r.sal;
+			$scope.deptno = r.deptno;
+			$scope.hiredate = r.hiredate;
+			$scope.dob = r.dob;
+			$scope.salAbove7k = parseInt(r.sal) > 7000;
+		});		
+	};
+
+}]);
+
+app.service('empService', ['$http', '$log', function($http, $log){
+	this.findEmployeeById = function(empno, cb){
+		$http({
+			url: 'http://localhost:8000/api/employees/' + empno,
+			method: 'GET'
+		}).then(function(resp){
+			//$log.log(resp.data);
+			cb(resp.data);
+		},function(resp){
+			$log.error("ERROR occurred");
+		});
+	};
+}]);
+
+app.directive('empDetails', function(){
+	return{
+		templateUrl: 'emp-details.htm'
+	}
+});
+	</pre>
+  </div>
+  <div id="template5" class="tab-pane fade">
+    <pre>
+<strong>File Name : emp-details.htm</strong>
+    &lt;div class="panel panel-primary"&gt;
+	&lt;div class="panel-heading"&gt;
+		Employee details
+	&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Employee No&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{empno}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Name&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{ename}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Salary&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{sal}}
+				&lt;span ng-hide="sal == undefined || sal &lt;= 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Hire Date&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{hiredate}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;DOB&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{dob}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-2"&gt;Department&lt;/div&gt;
+			&lt;div class="col-sm-2"&gt;{{deptno}}&lt;/div&gt;
+		&lt;/div&gt;	
+	&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+        Example : 07-Directive inside ng-repeat</a>
+</h4>
+</div>
+
+<div id="collapse7" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html6">Html</a></li>
+  <li><a data-toggle="tab" href="#script6">Script</a></li>
+  <li><a data-toggle="tab" href="#template6">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html6" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="emp"&gt;
+		&lt;div ng-repeat="oEmp in employees" class="col-md-4"&gt;
+			&lt;div emp-details&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script6" class="tab-pane fade">
+    <pre>
+    //using ajax - custom directive inside ng-repeat
+var app = angular.module("app", []);
+app.controller('emp', ['$scope', 'empService', function($scope, empService){
+	empService.getEmployees(function(r){
+		$scope.employees = r;
+	});		
+}]);
+
+app.service('empService', ['$http', '$log', function($http, $log){
+	this.getEmployees = function(cb){
+		$http({
+			url: 'http://localhost:8000/api/employees',
+			method: 'GET'
+		}).then(function(resp){
+			//$log.log(resp.data);
+			cb(resp.data);
+		},function(resp){
+			$log.error("ERROR occurred");
+		});
+	};
+}]);
+
+app.directive('empDetails', function(){
+	return{
+		templateUrl: 'emp-details.htm'
+	}
+});
+	</pre>
+  </div>
+  <div id="template6" class="tab-pane fade">
+    <pre>
+    &lt;div ng-class='(oEmp.sal &lt;= 7000) ? "panel panel-primary" : "panel panel-danger"'&gt;
+	&lt;div class="panel-heading"&gt;
+		&lt;h4&gt;{{oEmp.ename}}&lt;/h4&gt;
+	&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;Employee No&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.empno}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.ename}}&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;Salary&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.sal}}
+				&lt;span ng-hide="oEmp.sal == undefined || oEmp.sal &lt;= 7000" class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;Hire Date&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.hiredate | date: 'medium'}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;DOB&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.dob | date: 'medium'}}&lt;/div&gt;
+		&lt;/div&gt;				
+		&lt;div class="row"&gt;
+			&lt;div class="col-sm-4"&gt;&lt;strong&gt;Department&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class="col-sm-7"&gt;{{oEmp.deptno}}&lt;/div&gt;
+		&lt;/div&gt;	
+	&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+<h2>Compile-Link in depth
+<a href="pdf/11-12-13 Directives - Compile and Link in depth - Part 1 2.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="compile-link"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#compile-link" href="#collapse8">
+        12 Directives - Compile and Link in depth - Part 1</a>
+</h4>
+</div>
+
+<div id="collapse8" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html7">Html</a></li>
+  <li><a data-toggle="tab" href="#script7">Script</a></li>   
+  <li><a data-toggle="tab" href="#description7">Description</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html7" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="msg"&gt;
+		&lt;div message text="first"&gt;
+			&lt;div message text="..second"&gt;
+				&lt;div message text="....third"&gt;
+			
+				&lt;/div&gt;				
+			&lt;/div&gt;	
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script7" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('msg', ['$scope', function($scope){
+	$scope.a = 5; //this is available to directive, by default
+}]);
+
+app.directive('message', function($interpolate){
+return{
+
+    //executes before controller and only once (before cloning of template happens)
+    compile: function(tElement, tAttributes){ 
+        //no scope available
+        //tElement is the ref to template (not to instances/clones of template)
+        //can manipulate DOM of template (will be replicated in every clone)
+        //cannot play with data/events/inspects of clones
+        //operations which can be shared among all instances/clones of template
+        console.log(tAttributes.text + " -In compile..");
+        return {
+
+            //executed after controller, for every clone
+            pre: function(scope, iElement, iAttributes, controller){
+                //scope initialized
+
+                //iElement is the ref to element that will appear in DOM
+                //template is not linked to the scope yet (bindings are not setup)
+
+                //safe to:-
+                //safe to set data and even child data (child elements/directives are not ready yet)
+
+                //unsafe to:-
+                //access child elements (they are not linked/ready yet)
+
+                //scope can be manipulated
+                //scope.a = 20; //overwrites 10 from directive controller
+                console.log(iAttributes.text + " -In pre..");
+            },
+
+            //executed after pre, for every clone
+            post: function(scope, iElement, iAttributes, controller){
+                //template linked to scope
+                //iElement updated with data bound values
+                //all chidren directives are linked
+
+                //safe to:-
+                //attach event handlers
+                //inspect child elements
+                //any watches on scope etc.
+
+                //unsafe to:-
+                //set data for child elements (as they are already set)
+
+                //scope can be manipulated (for current element)
+                //scope.a = 30; //overwrites 20 from pre
+                console.log(iAttributes.text + " -In Post..");
+            }
+
+        }
+    },
+
+    //executed before pre, for every clone (obviously after compile)
+    controller: function($scope, $element, $attrs){
+        //mainly used to set data
+        //never access DOM here...it is not recommended
+
+        //code to initialize/manipulate scope object is good here
+        //$scope.a = 10; //overwrites 5 from main controller
+        console.log($attrs.text + " -In controller..");
+    },
+
+}
+});
+
+	</pre>
+  </div> 
+  <div id="description7" class="tab-pane fade">
+    <pre>
+    What is Compile in Angular JS
+What is Linking in Angular JS
+What are various phases and steps in Angular JS Compile & Link
+What are Pre-Link and Post-Link functions in Angular JS
+How to work with Compile, Pre-Link and Post-Link functions
+How is Controller in Directive related to Compile and Link
+What are templates and instances in Directive Compilation and Linking
+Understanding the workflow of Compiling and Linking in Angular JS directives
+How are nested directives (child elements) compiled and linked in Angular JS Application
+How to access attributes in Compile, Controller, Pre-Link and Post-Link functions
+Do's and Don'ts of Compile in Angular JS Directive
+Do's and Don'ts of Controller in Angular JS Directive
+Do's and Don'ts of Pre-Link in Angular JS Directive
+Do's and Don'ts of Post-Link in Angular JS Directive
+	</pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#compile-link" href="#collapse9">
+        13 Compile and Link - Part 2 DOM Manipulation and Event handling</a>
+</h4>
+</div>
+
+<div id="collapse9" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html8">Html</a></li>
+  <li><a data-toggle="tab" href="#script8">Script</a></li>   
+  <li><a data-toggle="tab" href="#link8">Link</a></li>
+  <li><a data-toggle="tab" href="#compile8">Compile</a></li>
+  <li><a data-toggle="tab" href="#default8">Default</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html8" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div ng-controller="msg"&gt;
+		&lt;div message text="{{i}}" ng-repeat="i in [1,2,3,4,5]"&gt;
+			{{i}}
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script8" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('msg', ['$scope', function($scope){
+	
+}]);
+
+app.directive('message', function($interpolate){
+	return{
+
+		compile: function(tElement, tAttributes){
+			console.log(tAttributes.text + " -In compile..");
+			tElement.css("border", "1px solid #C0C0C0");
+			return {
+
+				pre: function(scope, iElement, iAttributes, controller){					
+					console.log(iAttributes.text + " -In pre..");
+				},
+
+				post: function(scope, iElement, iAttributes, controller){					
+					console.log(iAttributes.text + " -In Post..");
+					if(iAttributes.text === "3"){
+						iElement.css("border", "1px solid #FF0000");
+					}
+					iElement.on('click', scope.btnClick);
+				}
+
+			}
+		},
+
+		controller: function($scope, $element, $attrs){												
+			var v = $interpolate($attrs.text)($scope);
+			console.log(v + " -In controller..");
+			$scope.btnClick = function(){
+				alert(v);
+			};
+		},
+
+	}
+});
+	</pre>
+  </div>
+  
+  <div id="link8" class="tab-pane fade">
+    <pre>
+     app.directive('message', function($interpolate){
+ 	return{
+ 		link: {
+ 			pre: function(scope, iElement, iAttributes, controller){					
+ 					console.log(iAttributes.text + " -In pre..");
+ 			},
+ 			post: function(scope, iElement, iAttributes, controller){					
+ 					console.log(iAttributes.text + " -In Post..");
+ 			}
+ 		}
+ 	}
+ });
+	</pre>
+  </div>
+  <div id="compile8" class="tab-pane fade">
+    <pre>
+     app.directive('message', function($interpolate){
+ 	return{
+ 		compile: function(tElement, tAttributes){
+ 			console.log(tAttributes.text + " -In compile..");
+ 			return  function(scope, iElement, iAttributes, controller){					
+ 				console.log(iAttributes.text + " -In Post..");
+ 			}
+ 		},
+ 	}
+ });
+	</pre>
+  </div>
+  <div id="default8" class="tab-pane fade">
+    <pre>
+     app.directive('message', function($interpolate){
+ 	return  function(scope, iElement, iAttributes, controller){					
+ 		console.log(iAttributes.text + " -In Post..");
+ 	}
+ });
+	</pre>
+  </div>
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+</div> <!-- Panel Group End -->
+
+
+
+
+
+
+<h2>18 What is Shared Scope (in Directives)
+<a href="pdf/18 What is Shared Scope (in Directives).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+
+<div class="panel-group" id="compile-link"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#compile-link" href="#collapse10">
+        Example  : Shared Scope</a>
+</h4>
+</div>
+
+<div id="collapse10" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html9">Html</a></li>
+  <li><a data-toggle="tab" href="#script9">Script</a></li>
+  <li><a data-toggle="tab" href="#template9">Template</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html9" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		Controller: a = {{a}}, b = {{b}}&lt;hr&gt;
+		Directive Instance 1: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		Directive Instance 2: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script9" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.a = 10;
+	$scope.b = 20;
+
+}]);
+
+//shares/uses parent scope
+//no scope on its own
+//scope id is same for both parent (controller) and child (directive)
+app.directive('message', function() {
+	return {        
+	    templateUrl: 'info-msg.html'
+	}
+});
+	</pre>
+  </div>
+  <div id="template9" class="tab-pane fade">
+    <pre>
+  File Name  : info-msg.html
+  &lt;div&gt;
+  	a = {{a}}, b = {{b}}	
+  &lt;/div&gt;
+	</pre>
+  </div>  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#compile-link" href="#collapse11">
+        Example : 02-Shared Scope (modifying scope in directives)</a>
+</h4>
+</div>
+
+<div id="collapse11" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html10">Html</a></li>
+  <li><a data-toggle="tab" href="#script10">Script</a></li>
+  <li><a data-toggle="tab" href="#template10">Template</a></li>
+  <li><a data-toggle="tab" href="#description10">Description</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html10" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		Controller: a = {{a}}, b = {{b}}&lt;br&gt;
+		Modify a: &lt;input ng-model="a" /&gt;&lt;br&gt;
+		&lt;button ng-click="changeValueB()"&gt;Change value B&lt;/button&gt;
+		&lt;hr&gt;
+		
+		Directive1 Instance 1: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 2: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		&lt;hr&gt;
+		Directive2 Instance 1: &lt;div message2&gt;&lt;/div&gt;&lt;br&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script10" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.a = 10;
+	$scope.b = 20;
+
+	//overwritten/replaced by 'message' directive
+	//further overwritten by 'message2' directive
+	$scope.changeValueB = function(){
+		$scope.b = 30; //becomes 50 after overwritings
+	}	
+
+}]);
+
+
+//replaces 'changeValueB' of parent (affects everywhere)
+//adds 'changeValueA' to parent (availble everywhere)
+app.directive('message', function() {
+
+	return {
+		templateUrl: 'info-msg.htm',
+
+		controller: function($scope, $element, $attrs){
+
+			//you can execute this from console
+			//1.select controller element
+			//2.angular.element($0).scope().changeValueA()
+			//3.angular.element($0).scope().$apply()
+			$scope.changeValueA = function(){ 
+				$scope.a = 5;
+			}
+
+			$scope.changeValueB = function(){
+				$scope.b = 40;
+			}
+		}
+	}
+
+});
+
+//further replaces 'changeValueB' of parent (affects everywhere)
+//this is the latest and overwrites everything else previously
+app.directive('message2', function() {
+
+	return {
+		templateUrl: 'info-msg.htm',
+
+		controller: function($scope, $element, $attrs){
+			$scope.changeValueB = function(){
+				$scope.b = 50;
+			}
+		}
+	}
+
+});
+	</pre>
+  </div>
+  <div id="template10" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	a = {{a}}, b = {{b}}&lt;br&gt;
+	Modify a: &lt;input ng-model="a" /&gt;&lt;br&gt;&lt;!--this affects 'a' everywhere --&gt;
+	&lt;button ng-click="changeValueB()"&gt;Change value B&lt;/button&gt;
+&lt;/div&gt;
+	</pre>
+  </div>  
+  <div id="description10" class="tab-pane fade">
+    <pre>
+    What is Shared Scope
+How to define Shared Scope in Directives
+How does Directives affect Controller when working with Shared Scope
+How does Controller affect Directives when using Shared Scope
+Defining Controllers in Directives and accessing Shared Scope
+Modifying Parent Controller Scope from (child) Directives
+Multiple Directives accessing same Shared Scope
+	</pre>
+  </div> 
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+</div> <!-- Panel Group End -->
+<h2>19 Inherited Scope / Child Scope in Directives & Controllers
+<a href="pdf/19 Inherited Scope (or Child Scope) in Directives & Controllers.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="child-scope"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#child-scope" href="#collapse12">
+        Example : 03-Child Scope - in controllers</a>
+</h4>
+</div>
+
+<div id="collapse12" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html11">Html</a></li>
+  <li><a data-toggle="tab" href="#script11">Script</a></li>
+  <li><a data-toggle="tab" href="#description11">Description</a></li> 
+</ul>
+
+<div class="tab-content">
+  <div id="html11" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		Sample: a = {{a}}, b = {{b}}&lt;br&gt;
+		a = &lt;input ng-model="a" /&gt;&lt;br&gt;
+		Sample: p = {{o.p}}, q = {{o.q}}&lt;br&gt;
+		p = &lt;input ng-model="o.p" /&gt;&lt;br&gt;		
+		&lt;hr&gt;
+		&lt;div id="div2" ng-controller="sample2"&gt; &lt;!-- child scope starts here --&gt;
+			Sample2: a = {{a}}, b = {{b}}&lt;br&gt;
+			Sample2: c = {{c}}, d = {{d}}&lt;br&gt;
+			a = &lt;input ng-model="a" /&gt;&lt;br&gt;&lt;!--upon change it creates/modifies child scope 'a' (not parent scope 'a') --&gt;
+			Sample2: p = {{o.p}}, q = {{o.q}}&lt;br&gt;
+			p = &lt;input ng-model="o.p" /&gt; &lt;!--upon change it modifies 'o.p' everywhere) --&gt;
+			&lt;hr&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script11" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.a = 10;
+	$scope.b = 20;
+
+	$scope.o = {
+		p: 100,
+		q: 200
+	}
+}]);
+
+app.controller('sample2', ['$scope', function($scope) {
+
+	$scope.c = 30;
+	$scope.d = 40;
+
+}]);
+	</pre>
+  </div>  
+  
+  <div id="description11" class="tab-pane fade">
+    <pre>
+      What is Inherited Scope (or Child Scope)
+Nested Controllers & Nested Child Scopes
+Inherited scope in Directives (vs. Shared Scope)
+Child Scope - local members & Inherited members
+Overriding Inherited members in Child Scope
+Accessing parent members in Child Scope using $parent
+Objects vs. primitive members when working with Child Scope
+How to work ng-include
+Child scope in ng-include
+Child Scopes in ng-repeat
+	</pre>
+  </div> 
+   
+
+    
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#child-scope" href="#collapse13">
+        Example : 04-Child Scope - in directives</a>
+</h4>
+</div>
+
+<div id="collapse13" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html12">Html</a></li>
+  <li><a data-toggle="tab" href="#script12">Script</a></li>
+  <li><a data-toggle="tab" href="#template12">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html12" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		Controller: a = {{a}}, b = {{b}}
+		&lt;button ng-click="changeValueB()"&gt;Change value B&lt;/button&gt;
+		&lt;hr&gt;
+		
+		Directive1 Instance 1: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 2: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		Directive2 Instance 1: &lt;div message2&gt;&lt;/div&gt;&lt;br&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script12" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	//all of the following scope members are available to all child scopes
+	//as long as they do not define on their own
+	$scope.a = 10;
+	$scope.b = 20;
+
+	$scope.changeValueB = function(){
+		$scope.b = 30; //applies to current scope
+	}	
+
+}]);
+
+
+app.directive('message', function() {
+
+	return {
+		templateUrl: 'info-msg.htm',
+		//creates child or inherited scope 
+		//diff id for each directive instance
+		//current scope is prototypically inherited from parent scope (__proto__) of controller
+		//parent scope ids are same for all instances of child scopes
+		//parent members still accessible ($scope.$parent)		
+		scope: true, 
+		controller: function($scope, $element, $attrs){
+			$scope.c = 100; //creates new child member 
+
+			$scope.changeValueA = function(){ 
+				$scope.a = 5; //creates new child member (no affect on parent)
+			}
+
+			$scope.changeValueB = function(){
+				$scope.b = 40; //creates new child member (no affect on parent)
+			}
+		}
+	}
+
+});
+
+app.directive('message2', function() {
+
+	return {
+		templateUrl: 'info-msg.htm',
+		scope: true, //creates child or inherited scope
+		controller: function($scope, $element, $attrs){
+			$scope.c = 200; //creates new child member 
+			$scope.changeValueB = function(){
+				$scope.b = 50; //creates new child member (no affect on parent)
+				//$scope.$parent.b = 50; //less common way, but possible
+			}
+		}
+	}
+
+});
+	</pre>
+  </div>
+  <div id="template12" class="tab-pane fade">
+    <pre>
+    File Name : info-msg.htm
+    &lt;div&gt;
+	a = {{a}}, b = {{b}}, c = {{c}}
+	&lt;button ng-click="changeValueB()"&gt;Change value B&lt;/button&gt;
+&lt;/div&gt;
+	</pre>
+  </div>  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#child-scope" href="#collapse14">
+        Example : 05-Child Scope - with ng-include, ng-repeater</a>
+</h4>
+</div>
+
+<div id="collapse14" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html13">Html</a></li>
+  <li><a data-toggle="tab" href="#script13">Script</a></li>
+  <li><a data-toggle="tab" href="#template13">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html13" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		Controller: a = {{a}}, b = {{b}}
+		&lt;button ng-click="changeValueB()"&gt;Change value B&lt;/button&gt;
+		&lt;hr&gt;
+		
+		&lt;!--the following two go with shared scope --&gt;
+		Directive1 Instance 1: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 2: &lt;div message&gt;&lt;/div&gt;&lt;br&gt;		
+
+		&lt;!--the following two go with child scope --&gt;
+		&lt;div ng-include src="'/info-msg.htm'"&gt;&lt;/div&gt;
+		&lt;hr&gt;
+		&lt;div message ng-repeat="i in [1,2,3]"&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script13" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.a = 10;
+	$scope.b = 20;
+
+	$scope.changeValueB = function(){
+		$scope.b = 30; 
+	}	
+}]);
+
+app.directive('message', function() {
+
+	return {
+		templateUrl: 'info-msg.htm',
+	}
+});
+	</pre>
+  </div>
+  <div id="template13" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	a = {{a}}, b = {{b}}&lt;br&gt;
+	Modify b: &lt;input ng-model="b" /&gt;&lt;!--can use 'ng-model="$parent.b"' to get rid local scope 'b' which gets creates through binding--&gt;
+&lt;/div&gt;
+	</pre>
+  </div>  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+</div> <!-- Panel Group End -->
+<div class="panel-group" id="isolate-scope"> <!-- Panel Group Start -->
+<h2>20 Isolated Scope In Directives (in-depth)
+<a href="pdf/20 Isolated Scope In Directives (in-depth).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#isolate-scope" href="#collapse15">
+        Example : 06-Isolated Scope - using @</a>
+</h4>
+</div>
+
+<div id="collapse15" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html14">Html</a></li>
+  <li><a data-toggle="tab" href="#script14">Script</a></li>
+  <li><a data-toggle="tab" href="#template14">Template</a></li>
+  <li><a data-toggle="tab" href="#description14">Description</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html14" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		Controller: a = {{a}}, b = {{b}}, p = {{p}}, q = {{q}}&lt;br&gt;
+		&lt;hr&gt;
+		Directive1 Instance 1: &lt;div message a="Hi" b="Jag"&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 2: &lt;div message a="{{p}}" b="{{q}}"&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 3: &lt;div message a="{{p * 10}}" b="{{q * 10}}"&gt;&lt;/div&gt;&lt;br&gt;
+		&lt;hr&gt;
+		Directive2 Instance 1: &lt;div message2 m="{{a}}" n="{{b}}"&gt;&lt;/div&gt;&lt;br&gt;	
+		&lt;!-- 'a' and 'b' of parent scope--&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script14" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.a = 10;
+	$scope.b = 20;
+	$scope.p = 11;
+	$scope.q = 22;	
+
+}]);
+
+app.directive('message', function(){
+
+	return {
+		templateUrl: 'info-msg.htm',
+		//scope:{} 	//isloated scope (no inheritance from parent), no values displayed
+
+		//expects string parameters for 'a' and 'b' members of directive scope
+		//@ - stands for string or interpolated string and one-way binding (parent to directive scope)
+		scope:{		
+			a: '@',
+			b: '@'
+		},
+
+		//accessing the isoloated scope in controller
+		controller: function($scope, $element, $attrs){
+			$scope.doProcess = function(){
+				var r = parseInt($scope.a) + parseInt($scope.b);
+				alert("Sum = " + r);	
+			}			
+		}
+	}
+
+});
+
+app.directive('message2', function(){
+
+	return {
+		templateUrl: 'info-msg.htm',
+		//expects string parameters for 'a' and 'b' members of directive scope, 
+		//from 'm' and 'n' attributes in markup
+		scope:{		
+			a: '@m',
+			b: '@n'
+		},
+
+		//accessing the isoloated scope in controller
+		controller: function($scope, $element, $attrs){
+			$scope.doProcess = function(){
+				var r = parseInt($scope.a) + parseInt($scope.b);
+				alert("Sum = " + r);	
+			}			
+		}		
+	}
+
+});
+	</pre>
+  </div>
+  <div id="template14" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	a = {{a}}, b = {{b}}
+	&lt;button ng-click="doProcess()"&gt;Show&lt;/button&gt;
+&lt;/div&gt;
+	</pre>
+  </div> 
+  <div id="description14" class="tab-pane fade">
+    <pre>
+    What is Isolated Scope in Directives
+Shared vs. Inherited vs. Isolated scopes in Directives
+How to pass scope parameters in Isolated scope
+How to access parent scope in Isolated scope
+Working with '@' symbol to pass (and one-way bind) interpolated strings
+Working with '=' symbol to pass (and two-way bind) objects
+Working with '&' symbol to access functions in some other scope (in different ways)
+    </pre>
+    </div> 
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#isolate-scope" href="#collapse16">
+        07-Isolated Scope - using =</a>
+</h4>
+</div>
+
+<div id="collapse16" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html15">Html</a></li>
+  <li><a data-toggle="tab" href="#script15">Script</a></li>
+  <li><a data-toggle="tab" href="#template15">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html15" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		Controller: empno = {{emp.empno}}, ename = {{emp.ename}}&lt;br&gt;
+		Ename: &lt;input ng-model="emp.ename" /&gt;
+		&lt;hr&gt;
+
+		Directive1 Instance 1: &lt;div message employee="emp"&gt;&lt;/div&gt;&lt;br&gt;
+		Directive1 Instance 2: &lt;div message employee="emp"&gt;&lt;/div&gt;&lt;br&gt;
+		
+		&lt;!-- or following with change in directive scope--&gt;
+		&lt;!-- Directive1 Instance 3: &lt;div message o-emp="emp"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script15" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+	$scope.emp = {
+		empno: 1001,
+		ename: 'Jag'
+	}
+
+}]);
+
+app.directive('message', function(){
+
+	return {
+		templateUrl: 'info-msg.htm',
+		//= - stands for object and two-way binding (parent to directive scope and vice-versa)
+		scope:{		
+			employee: '='
+			//or following with change in markup
+			//employee:'=oEmp'
+		}
+	}
+});	</pre>
+  </div>
+  <div id="template15" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	empno = {{employee.empno}}, b = {{employee.ename}}&lt;br&gt;
+	Ename: &lt;input ng-model="employee.ename" /&gt;
+&lt;/div&gt;
+	</pre>
+  </div>  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#isolate-scope" href="#collapse17">
+        08-Isolated Scope - using and</a>
+</h4>
+</div>
+
+<div id="collapse17" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html16">Html</a></li>
+    <li><a data-toggle="tab" href="#html-2-16">Html-2</a></li>
+  <li><a data-toggle="tab" href="#script16">Script</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html16" class="tab-pane fade in active">
+    <pre>
+    &lt;div&gt;
+    p = {{p}}, q = {{q}}&lt;br&gt;
+    p: &lt;input ng-model="p" /&gt;, q: &lt;input ng-model="q" /&gt; &lt;br&gt;
+     
+    &lt;!-- first way (with first way in markup)--&gt;
+    &lt;!-- &lt;button ng-click="extSum({m:p, n:q})"&gt;Sum&lt;/button&gt; --&gt;
+    &lt;!-- &lt;button ng-click="doProcess()"&gt;Sum from Controller&lt;/button&gt; --&gt;
+ 
+    &lt;!-- second way (with second way in markup--&gt;
+    &lt;button ng-click="extSum()(p, q)"&gt;Sum&lt;/button&gt;&lt;br&gt;
+    &lt;button ng-click="doProcess2()"&gt;Sum from Controller&lt;/button&gt;&lt;br&gt;
+ 
+    &lt;!--still can access parent scope in isolated scope (but, try avoiding this) --&gt;
+    &lt;!-- a = {{$parent.a}}, b = {{$parent.b}} --&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+    <div id="html-2-16" class="tab-pane fade">
+    <pre>
+    &lt;body ng-app="app"&gt;
+    &lt;div id="div1" ng-controller="sample"&gt;     
+        Controller: a = {{a}}, b = {{b}}&lt;br&gt;
+        a: &lt;input ng-model="a" /&gt;, b: &lt;input ng-model="b" /&gt; &lt;br&gt;
+        &lt;button ng-click="doSum(a, b)"&gt;Sum&lt;/button&gt;
+        &lt;hr&gt;
+        &lt;!-- first way (with first way in template--&gt;
+        &lt;!-- Directive1 Instance 1: &lt;div message ext-sum="doSum(m,n)"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
+         
+        &lt;!-- second way (with second way in template--&gt;
+        Directive1 Instance 1: &lt;div message ext-sum="doSum"&gt;&lt;/div&gt;&lt;br&gt;
+ 
+        &lt;!-- third way (with third way in js--&gt;
+        &lt;!-- Directive1 Instance 1: &lt;div message just-sum="doSum"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
+    &lt;/div&gt; 
+&lt;/body&gt;
+	</pre>
+  </div>  
+  <div id="script16" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+ 
+app.controller('sample', ['$scope', function($scope) {
+ 
+    $scope.a = 10;
+    $scope.b = 20;
+ 
+    $scope.doSum = function(x, y) {
+        alert("Sum = " + (parseInt(x)+parseInt(y)));
+    }
+ 
+}]);
+ 
+app.directive('message', function(){
+ 
+    return {
+        templateUrl: 'info-msg.htm',
+        //& - function binding (call external function from directive)
+        scope:{    
+            extSum: '&'
+ 
+            //third way (with third way in markup)
+            //extSum: '&justSum'
+        },
+ 
+        controller: function($scope, $element, $attrs){
+             
+            $scope.doProcess = function(){
+                $scope.extSum({m:$scope.p, n:$scope.q});
+            };
+ 
+            $scope.doProcess2 = function(){
+                //$scope.extSum()($scope.p, $scope.q);
+                $scope.extSum()($scope.p, $scope.q * $scope.$parent.a);
+            }
+ 
+        }
+ 
+ 
+    }
+ 
+});
+	</pre>
+  </div>
+
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+
+<h2>21 Transclusion (Getting Started)
+<a href="pdf/21 Transclusion (Getting Started).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="transclusion"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#transclusion" href="#collapse18">
+        Example : 09-Transclusion - using ng-transclude</a>
+</h4>
+</div>
+
+<div id="collapse18" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html17">Html</a></li>
+  <li><a data-toggle="tab" href="#script17">Script</a></li>
+  <li><a data-toggle="tab" href="#template17">Template</a></li>
+  <li><a data-toggle="tab" href="#template-2-17">Template</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="html17" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		This is Controller:&lt;br&gt;
+		&lt;hr&gt;
+		Message 1 - Instance 1 &lt;div message1&gt;&lt;/div&gt;&lt;br&gt; &lt;!--works with no issues--&gt;
+		Message 1 - Instance 2 &lt;div message1&gt;this is inner message&lt;/div&gt;&lt;br&gt; &lt;!--does not work--&gt;
+
+		Message 2 - Instance 1 &lt;div message2&gt;this is inner message&lt;/div&gt;&lt;br&gt; &lt;!--works--&gt;		
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script17" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+
+}]);
+
+//works, but cannot contain inner content in markup
+app.directive('message1', function(){
+	return {
+		templateUrl: 'msg1.htm'
+	}
+});
+
+//works and can contain inner content in markup
+app.directive('message2', function(){
+	return {
+		templateUrl: 'msg2.htm',
+		transclude: true //in this case, it uses 'ng-transclude' in template
+	}
+});
+	</pre>
+  </div>
+  <div id="template17" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from msg 1 template
+&lt;/div&gt;
+	</pre>
+  </div> 
+<div id="template-2-17" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from msg 2 template and following is inner content
+	&lt;div ng-transclude style='color:#0000FF'&gt;&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>   
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#transclusion" href="#collapse19">
+        Example : 10-Transclusion - using transclude function</a>
+</h4>
+</div>
+
+<div id="collapse19" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html18">Html</a></li>
+  <li><a data-toggle="tab" href="#script18">Script</a></li>
+  <li><a data-toggle="tab" href="#template18">Template</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html18" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		This is Controller:&lt;br&gt;
+		&lt;hr&gt;
+		Message 3 - Instance 1 &lt;div message3&gt;this is inner message&lt;/div&gt;&lt;br&gt;
+		Message 4 - Instance 1 &lt;div message4&gt;this is inner message&lt;/div&gt;&lt;br&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script18" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+
+}]);
+
+//transclusion using link function
+app.directive('message3', function(){
+	return {
+		templateUrl: 'msg3.htm',
+		transclude: true,		
+		link: function(scope, iElement, iAttributes, controller, transclude){
+			//transclude() - returns the transcluded content from view
+			iElement.find('#innerPanel').append(transclude());
+		}		
+	}
+});
+
+//transclusion using directive controller
+app.directive('message4', function(){
+	return {
+		templateUrl: 'msg3.htm',
+		transclude: true,		
+		controller: function($scope, $element, $attrs, $transclude){
+			$element.find('#innerPanel').append($transclude());
+		}		
+	}
+});
+	</pre>
+  </div>
+  <div id="template18" class="tab-pane fade">
+    <pre>
+    div&gt;
+	this is from msg 3 template and following is inner content
+	&lt;div id="innerPanel" style='color:#0000FF'&gt;&lt;/div&gt;
+	&lt;div&gt;
+&lt;/div&gt;
+	</pre>
+  </div> 
+  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#transclusion" href="#collapse20">
+        Example : 11-Transclusion - using my own transclude directive</a>
+</h4>
+</div>
+
+<div id="collapse20" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html19">Html</a></li>
+  <li><a data-toggle="tab" href="#script19">Script</a></li>
+  <li><a data-toggle="tab" href="#template19">Template</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html19" class="tab-pane fade in active">
+    <pre>
+    &lt;body ng-app="app"&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;		
+		This is Controller:&lt;br&gt;
+		&lt;hr&gt;
+		Message 4 - Instance 1 &lt;div message4&gt;this is inner message&lt;/div&gt;&lt;br&gt;
+	&lt;/div&gt;	
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script19" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+
+}]);
+
+app.directive('message4', function(){
+	return {
+		templateUrl: 'msg4.htm',
+		transclude: true
+	}
+});
+
+//my own transclude directive - similar to ng-transclude
+app.directive('myTransclude', function(){
+	return {
+		link: function(scope, el, attr, ctrl, transclude){
+			el.append(transclude());
+		}
+	}
+});
+	</pre>
+  </div>
+  <div id="template19" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from msg 3 template and following is inner content
+	&lt;div my-transclude style='color:#0000FF'&gt;&lt;/div&gt;
+	&lt;div&gt;
+&lt;/div&gt;
+	</pre>
+  </div> 
+  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+<h2>Transclusion - in depth
+<a href="pdf/22 Clone Linking Function in Transclusion (transclude function).pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<div class="panel-group" id="transclusion-indepth"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#transclusion-indepth" href="#collapse21">
+        Example : 22 Clone Linking Function in Transclusion (transclude function)</a>
+</h4>
+</div>
+
+<div id="collapse21" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html19">Html</a></li>
+  <li><a data-toggle="tab" href="#script20">Script</a></li>
+  <li><a data-toggle="tab" href="#template20">Template</a></li>
+<li><a data-toggle="tab" href="#description20">Description</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html20" class="tab-pane fade in active">
+    <pre>
+    &lt;div id="div1" ng-controller="sample"&gt;		
+	This is Controller:&lt;br&gt;
+	&lt;hr&gt;
+	Message 1 &lt;div message1&gt;this is inner message&lt;/div&gt;&lt;br&gt;
+	&lt;hr&gt;
+	Message 2 &lt;div message2&gt;this is inner message&lt;/div&gt;&lt;br&gt;
+&lt;/div&gt; 				
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script20" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+
+}]);
+
+app.directive('message1', function(){
+	return {
+		templateUrl: 'msg1.htm',
+		transclude: true,		
+		controller: function($scope, $element, $attrs, $transclude){
+			//$transclude(<no callback>) - creates instance of (to be) transcluded content
+			//creates only once (if not created earlier)
+			//reuses the same, once created
+
+			//with not commenting any of the following lines, 
+			//the transcluded content is moved from innerPanel1 to innerPanel2
+			$element.find('#innerPanel1').append($transclude()); //creates transcluded content instance
+			$element.find('#innerPanel2').append($transclude()); //reuses the same (moves from innerPanel1 to innerPanel2)
+
+			//commenting one of the above lines would work with no issues
+		}		
+	}
+});
+
+app.directive('message2', function(){
+	return {
+		templateUrl: 'msg1.htm',
+		transclude: true,		
+		controller: function($scope, $element, $attrs, $transclude){
+			//$transclude(<with callback>) - called "clone attach function" or "clone linking function"
+
+			//creates/clones instance of transcluded content every time
+			$transclude(function(transEl){
+				$element.find('#innerPanel1').append(transEl);
+			});
+
+			//creates/clones instance of transcluded content every time
+			$transclude(function(transEl){
+				$element.find('#innerPanel2').append(transEl);
+			});
+
+			//good for multiple transclusions (and RECOMMENDED PATTERN)
+		}		
+	}
+});
+	</pre>
+  </div>
+  <div id="template20" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from msg 1 template and following is inner content
+	&lt;div id="innerPanel1" style='color:#0000FF'&gt;&lt;/div&gt;
+	&lt;div id="innerPanel2" style='color:#FF0000'&gt;&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+<div id="description20" class="tab-pane fade">
+    <pre>
+    What is transclude function
+What is cloning of transcluding content
+When do we need to clone transcluded content
+Various forms of transclude function
+What is Clone Linking Function (or Clone attach function)
+How to clone transcluding content
+	</pre>
+  </div>  
+  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#transclusion-indepth" href="#collapse22">
+        Example : 23 Transclusion Scope and Custom data</a>
+</h4>
+</div>
+
+<div id="collapse22" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html19">Html</a></li>
+  <li><a data-toggle="tab" href="#script21">Script</a></li>
+  <li><a data-toggle="tab" href="#template21">Template</a></li>
+  <li><a data-toggle="tab" href="#template-2-21">Template-2</a></li>
+<li><a data-toggle="tab" href="#description21">Description</a></li>  
+</ul>
+
+<div class="tab-content">
+  <div id="html21" class="tab-pane fade in active">
+    <pre>&lt;body ng-app="app"&gt;
+	&lt;strong&gt;Shared Scope&lt;/strong&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		This is controller
+		x = {{a.x}}, y = {{b.y}}&lt;br&gt;		
+		&lt;div message1&gt;
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		&lt;/div&gt;		
+	&lt;/div&gt;	
+	&lt;hr&gt;
+	&lt;strong&gt;Inherited Scope&lt;/strong&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		This is controller
+		x = {{a.x}}, y = {{b.y}}&lt;br&gt;		
+		&lt;div message2&gt;
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		&lt;/div&gt;		
+	&lt;/div&gt;	
+	&lt;hr&gt;
+	&lt;strong&gt;Isolated Scope&lt;/strong&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		This is controller
+		x = {{a.x}}, y = {{b.y}}&lt;br&gt;		
+		&lt;div message3&gt;
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		&lt;/div&gt;		
+	&lt;/div&gt;	
+	&lt;hr&gt;
+	&lt;strong&gt;Custom data to Transclusion scope&lt;/strong&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		This is controller
+		x = {{a.x}}, y = {{b.y}}&lt;br&gt;		
+		&lt;div message4&gt;
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		&lt;/div&gt;		
+	&lt;/div&gt;	
+	&lt;hr&gt;
+	&lt;strong&gt;Custom Transclusion scope&lt;/strong&gt;
+	&lt;div id="div1" ng-controller="sample"&gt;
+		This is controller
+		x = {{a.x}}, y = {{b.y}}&lt;br&gt;		
+		&lt;div message5&gt;
+			this is transcluded content
+			x = {{a.x}}, y = {{b.y}}
+		&lt;/div&gt;		
+	&lt;/div&gt;	
+	&lt;hr&gt;				
+&lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script21" class="tab-pane fade">
+    <pre>
+    var app = angular.module('app', []);
+
+app.controller('sample', ['$scope', function($scope) {
+	$scope.a = {
+		x: 10		
+	};
+}]);
+
+//shared scope
+//transclusion scope is created automatically, if not used with transclude function
+app.directive('message1', function(){
+	return {
+		templateUrl: 'msg1.htm',
+		transclude: true,
+		controller: function($scope, $element, $attrs){
+			$scope.b = {
+				y: 20
+			};
+		}
+	}
+});
+
+//inherited scope
+//transclusion scope is created automatically, if not used with transclude function
+app.directive('message2', function(){
+	return {
+		templateUrl: 'msg1.htm',
+		transclude: true,
+		scope: true,
+		controller: function($scope, $element, $attrs){
+			$scope.b = {
+				y: 20
+			};
+		}
+	}
+});
+
+//isolated scope
+//transclusion scope is created automatically, if not used with transclude function
+app.directive('message3', function(){
+	return {
+		templateUrl: 'msg1.htm',
+		transclude: true,
+		scope: {},
+		controller: function($scope, $element, $attrs){
+			$scope.b = {
+				y: 20
+			};
+		}
+	}
+});
+
+//custom data to transclusion scope
+app.directive('message4', function(){
+	return {
+		templateUrl: 'msg2.htm',
+		transclude: true,
+		scope: {},
+		controller: function($scope, $element, $attrs, $transclude){
+			$scope.b = {
+				y: 20
+			};
+
+			//manual transclusion - not using ng-transclude in msg2.htm			
+			//we can modify the scope using "clone linking transclude function" as follows			
+			$transclude(function(transEl, $transScope){
+				$transScope.b = {};
+				$transScope.b.y = $scope.b.y;
+				$element.find('#innerPanel').append(transEl);
+			});
+		}
+	}
+});
+
+//custom transclusion scope
+app.directive('message5', function(){
+	return {
+		templateUrl: 'msg2.htm',
+		transclude: true,
+		scope: {},
+		controller: function($scope, $element, $attrs, $transclude){
+			$scope.b = {
+				y: 20
+			};
+
+			//creates new isolated scope
+			//$customScope.$parent automatically set to $scope
+			//no inheritance in transclusion scope now
+			var $customScope = $scope.$new(true);  
+
+			$customScope.a  = {
+				x: 100
+			};
+			$customScope.b  = {
+				y: 200
+			};
+
+			//you can send any scope object here (including controller, root scope or custom scope)
+			$transclude($customScope, function(transEl){
+				$element.find('#innerPanel').append(transEl);
+			});
+		}
+	}
+});
+	</pre>
+  </div>
+  <div id="template21" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from template
+	x = {{a.x}}, y = {{b.y}}
+	&lt;div ng-transclude style="color:blue"&gt;&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+  <div id="template-2-21" class="tab-pane fade">
+    <pre>
+    &lt;div&gt;
+	this is from template
+	x = {{a.x}}, y = {{b.y}}
+	&lt;div id="innerPanel" style="color:blue"&gt;&lt;/div&gt;
+&lt;/div&gt;
+	</pre>
+  </div>
+<div id="description21" class="tab-pane fade">
+    <pre>
+    What is Transclusion Scope
+How is Transclusion scope related to Directive Scope and Controller Scope
+How does Transcluded Content receive data
+How does Transclusion communicate with directives
+Transclusion scope with Shared Scope, Inherited Scope and Isolated Scopes
+Using Clone Linking function for Transclusion (and Transclusion Scope)
+Creating Custom Scope and make it as Transclusion Scope
+Passing Custom data to Transclusion Scope
+	</pre>
+  </div>  
+  
+</div>
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+
+
+
+</div> <!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>

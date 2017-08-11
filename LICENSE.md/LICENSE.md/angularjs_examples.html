@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AngularJS Examples</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="angularjs_definitions.html">Definition</a></li>
+          <li><a href="angularjs_programs.html">Programs</a></li>
+          <li><a href="angularjs_examples.html">Examples</a></li>
+          <li><a href="angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="jQuery/advancedJs.html">Advanced JS</a></li>
+          <li><a href="jQuery_programs.html">Programs</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-12"> <!--Right Column Wrapper strat col-sm-9-->
+<h1>Angular JS Examples </h1>
+
+<h3>Template Script</h3>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;AngularJs&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+<br>
+<div class="form-group">
+  
+<input type="text" class="form-control" id="example_txt" placeholder="Enter the keyword.." style="width:40%;float:left"> &nbsp;
+  <button type="button" class="btn btn-primary" id="btn_submit" style="float:left">Submit</button>
+  
+</div>
+<div id="example-box" style="display:none;">
+<table class="table table-bordered ">
+<tr>
+<td><a href="http://techfunda.com/Examples/" target="_blank">Tech Funda</a></td>
+<td><a href="https://scotch.io/tag/angular-js/drink-number/6" target="_blank">Scotch</a></td>
+<td><a href="http://www.angulartutorial.net/p/site-map.html" target="_blank">Make It Easy</a></td>
+</tr>
+<tr>
+<td><a href="http://www.dotnettricks.com/learn/angularjs" target="_blank">Dotnet Tricks</a></td>
+<td><a href="https://www.sitepoint.com/tag/directives/" target="_blank">Site Point</a></td>
+<td><a href="https://chsakell.com/2015/08/23/building-single-page-applications-using-web-api-and-angularjs-free-e-book/#architecture" target="_blank">Home Cinema Project</a></td>
+</tr>
+<tr>
+<td><a href="http://www.simplygoodcode.com/page/2/" target="_blank">Simplygood</a></td>
+<td><a href="http://www.shanidkv.com/blog/angularjs-dynamic-table-addremove-action" target="_blank">Dynamic Table</a></td>
+<td><a href="http://excellencenodejsblog.com/category/angularjs/" target="_blank">Excellencenode</a></td>
+</tr>
+<tr>
+<td><a href="http://www.javatpoint.com/angularjs-tutorial" target="_blank">Java Point</a></td>
+<td><a href="https://www.cheatography.com/proloser/cheat-sheets/angularjs/" target="_blank">Cheat Sheet</a></td>
+<td><a href="http://www.c-sharpcorner.com/article/angularjs-2-0-from-beginning-introduction-of-angular-js-2-0/" target="_blank">Angular 2 Beginer</a></td>
+</tr>
+<tr>
+<td><a href="http://www.c-sharpcorner.com/search/angularjs" target="_blank">C# Corner Serach</a></td>
+<td><a href="http://www.c-sharpcorner.com/members/jeetendra-gund" target="_blank">Jeetendra 1</a></td>
+<td><a href="http://www.c-sharpcorner.com/UploadFile/26b237/introduction-to-angularjs-day-13/" target="_blank">Jeetendra 2</a></td>
+</tr>
+<tr>
+<td><a href="http://www.encodedna.com/category/angularjs/" target="_blank">encodedna</a></td>
+<td><a href="http://www.techstrikers.com/AngularJS/angularjs-custom-directives.php" target="_blank">TechStrikers</a></td>
+<td><a href="https://www.infragistics.com/community/blogs/dhananjay_kumar/archive/tags/AngularJS/default.aspx?PageIndex=1" target="_blank">Infragistics</a></td>
+</tr>
+<tr>
+<td><a href="http://devproconnections.com/javascript/how-structure-javascript-code-part-1" target="_blank">JS Patterns</a></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+<div id="Errormsg">
+</div>
+
+</div> <!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+<script type="text/javascript"> 
+$(document).ready(function() {
+$("#btn_submit").on('click',function(){
+	
+	if($("#example_txt").val() === "123")
+	{
+		$("#Errormsg").html('');
+		$("#example-box").show();
+	} else {
+		$("#Errormsg").html("<span>Invalid Input...</span>");
+		$("#example-box").hide();
+		}
+	
+	})
+});
+</script>
+</html>

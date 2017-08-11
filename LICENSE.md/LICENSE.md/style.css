@@ -1,0 +1,54 @@
+body {
+      position: relative; 
+	  font-size:17px !important;
+  }
+  .index-footer{
+	  margin-bottom:50px;	  }
+	  .index-top{
+		  margin-bottom:5px;
+		  }
+.note-box {
+    color: #144261;
+    background: #d5e9f6;
+}
+.color-box {
+    margin-top: 20px;
+    padding-left: 17px;
+}
+.tip-box {
+    color: #2e5014;
+    background: #d5efc2;
+}
+.shadow {
+    background: #F7F8F9;
+    padding: 3px;
+    margin: 10px 0;
+}
+.tutorialbox ul {
+    list-style: none outside none;
+    padding-left: 30px;
+}
+.page-content{
+	margin-top:50px;
+}
+.fa-file-pdf-o{
+	color:#DF1014;
+	}
+	
+/*jQuery Ajax*/
+
+.footer-list{
+	text-align:right;
+	margin-bottom:5px;
+	}
+footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+	}

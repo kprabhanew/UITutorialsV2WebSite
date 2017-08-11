@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angular JS Definition</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="angularjs_definitions.html">Definition</a></li>
+          <li><a href="angularjs_programs.html">Programs</a></li>
+          <li><a href="angularjs_examples.html">Examples</a></li>
+          <li><a href="angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="jQuery/advancedJs.html">Advanced JS</a></li>
+          <li><a href="jQuery_programs.html">Programs</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+<div class="hidden-xs col-md-2" id="myScrollspy">
+  <nav >
+    <ul class="nav nav-pills nav-stacked left-menu" data-offset-top="50" data-spy="affix">
+      <li><a href="#scope-dv"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Scope</a></li>
+      <li><a href="#directive-dv"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Directives </a></li>
+      <li><a href="#transclusion-dv"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Transclusion</a></li>
+
+       
+      <!--<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Section 4 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tabs</a></li>
+          <li><a href="#">Modal</a></li>
+        </ul>
+      </li>-->
+    </ul>
+  </nav>
+</div>
+<!--Right Column Wrapper Strat-->
+<div class="col-xs-12 col-md-9">
+<h1>Angular JS Defenitions </h1>
+<h3>What is AngularJS</h3>
+<p>Angular JS is an open source JavaScript framework that is used to build web applications. Angular Js is developed by Google.</p>
+
+<h3>Advantage of AngularJS</h3>
+Following are the advantages of AngularJS over other JavaScript frameworks:
+<ul>
+<li>Dependency Injection: Dependency Injection specifies a design pattern in which components are given their dependencies instead of hard coding them within the component.</li>
+<li>Two way data binding: AngularJS creates a two way data-binding between the select element and the orderProp model. orderProp is then used as the input for the orderBy filter.</li>
+<li>Testing: Angular JS is designed in a way that we can test right from the start. So, it is very easy to test any of its components through unit testing and end-to-end testing.</li>
+<li>Model View Controller: In Angular JS, it is very easy to develop application in a clean MVC way. You just have to split your application code into MVC components i.e. Model, View and the Controller.</li>
+<li>Directives, filters, modules, routes etc.</li>
+</ul>
+
+<h3>AngularJS MVC Architecture</h3>
+<p>MVC stands for Model View Controller. It is a software design pattern for developing web applications. It is very popular because it isolates the application logic from the user interface layer and supports separation of concerns.</p>
+<p>The MVC pattern is made up of the following three parts:</p>
+</ul>
+<ol>Model: It is responsible for managing application data. It responds to the requests from view and to the instructions from controller to update itself.</ol>
+<ol>View: It is responsible for displaying all data or only a portion of data to the users. It also specifies the data in a particular format triggered by the controller's decision to present the data. They are script-based template systems such as JSP, ASP, PHP and very easy to integrate with AJAX technology.</ol>
+<ol>Controller: It is responsible to control the relation between models and views. It responds to user input and performs interactions on the data model objects. The controller receives input, validates it, and then performs business operations that modify the state of the data model.</ol>
+<h3>AngularJS Data Binding</h3>
+<p>Data binding is a very useful and powerful feature used in software development technologies. It acts as a bridge between the view and business logic of the application.</p>
+<h3>AngularJS follows Two-Way data binding model.</h3>
+<p>One-Way Data Binding</p>
+<p>The one-way data binding is an approach where a value is taken from the data model and inserted into an HTML element. There is no way to update model from view. It is used in classical template systems. These systems bind data in only one direction.</p>
+<p>Two-Way Data Binding</p>
+<p>Data-binding in Angular apps is the automatic synchronization of data between the model and view components.</p>
+<p>Data binding lets you treat the model as the single-source-of-truth in your application. The view is a projection of the model at all times. If the model is changed, the view reflects the change and vice versa.</p>
+<h3>AngularJS Expressions</h3>
+<p>In AngularJS, expressions are used to bind application data to HTML. AngularJS resolves the expression, and return the result exactly where the expression is written.</p>
+<h3>Difference between AngularJS Expressions and JavaScript expressions:</h3>
+<p>AngularJS expressions can be written inside HTML, while JavaScript expressions cannot.</p>
+<p>AngularJS expressions support filters, while JavaScript expressions do not.</p>
+<p>AngularJS expressions do not support conditionals, loops, and exceptions, while JavaScript expressions do.</p>
+<h3>Similarity between AngularJS Expressions and JavaScript expressions:</h3>
+<p>AngularJS expressions and JavaScript expressions both can contain literals, operators and variables.</p>
+
+<h3>AngularJS Directives</h3>
+
+<p>AngularJS facilitates you to extend HTML with new attributes. These attributes are called directives.</p>
+
+<p>There is a set of built-in directive in AngularJS which offers functionality to your applications. You can also define your own directives.</p>
+<p>Directives are special attributes starting with ng- prefix. Following are the most common directives:</p>
+<p><strong>ng-app:</strong> This directive starts an AngularJS Application.</p>
+<p><strong>ng-init:</strong> This directive initializes application data.</p>
+<p><strong>ng-model:</strong> This directive defines the model that is variable to be used in AngularJS.</p>
+<p><strong>ng-repeat:</strong> This directive repeats html elements for each item in a collection.</p>
+<p><strong>ng-app directive :</strong>ng-app directive defines the root element. It starts an AngularJS Application and automatically initializes or bootstraps the application when web page containing AngularJS Application is loaded. It is also used to load various AngularJS modules in AngularJS Application.</p>
+<p><strong>ng-init directive :</strong></p>
+<p>ng-init directive initializes an AngularJS Application data. It defines the initial values for an AngularJS application.</p>
+<p><strong>ng-model directive :</strong>ng-model directive defines the model/variable to be used in AngularJS Application.</p>
+<p><strong>ng-repeat directive :</strong>
+ng-repeat directive repeats html elements for each item in a collection. In following example, we've iterated over array of countries.</p>
+<h3>AngularJS Controllers :</h3>
+<p>AngularJS controllers are used to control the flow of data of AngularJS application. A controller is defined using ng-controller directive. A controller is a JavaScript object containing attributes/properties and functions. Each controller accepts $scope as a parameter which refers to the application/module that controller is to control.</p>
+
+<p><strong>Note:</strong></p>
+Here, the AngularJS application runs inside the &lt;div&gt; is defined by ng-app="myApp".
+The AngularJS directive is ng-controller="myCtrl" attribute.
+The myCtrl function is a JavaScript function.
+AngularJS will invoke the controller with a $scope object.
+In AngularJS, $scope is the application object (the owner of application variables and functions).
+The controller creates two properties (variables) in the scope (firstName and lastName).
+The ng-model directives bind the input fields to the controller properties (firstName and lastName).
+
+<h3>AngularJS Module</h3>
+<p>In AngularJS, a module defines an application. It is a container for the different parts of your application like controller, services, filters, directives etc.</p>
+<p>A module is used as a Main() method. Controller always belongs to a module.</p>
+
+<h3>How to create a module</h3>
+<p>The angular object's module() method is used to create a module. It is also called AngularJS function angular.module</p>
+<p>Now we can add controllers, directives, filters, and more, to AngularJS application.</p>
+<p><strong>How to add controller to a module</strong></p>
+<p>If you want to add a controller to your application refer to the controller with the ng-controller directive.</p>
+
+<h3 id="scope-dv">AngularJS Scopes</h3>
+<p>The Scope is an object that is specified as a binding part between the HTML (view) and the JavaScript (controller). It plays a role of joining controller with the views. It is available for both the view and the controller.</p>
+<p><strong>How to use Scope :</strong>
+To make a controller in AngularJS, you have to pass the $scope object as an argument.</p>
+
+<h2>AngularJS Dependency Injection</h2>
+
+<p>AngularJS comes with a built-in dependency injection mechanism. It facilitates you to divide your application into multiple different types of components which can be injected into each other as dependencies.</p>
+<p>
+Dependency Injection is a software design pattern that specifies how components get holds of their dependencies. In this pattern, components are given their dependencies instead of coding them within the component.</p>
+
+<p>Modularizing your application makes it easier to reuse, configure and test the components in your application. Following are the core types of objects and components:</p>
+
+<ul>
+<li>value</li>
+<li>factory</li>
+<li>service</li>
+<li>provider</li>
+<li>constant</li>
+</ul>
+<p>These objects and components can be injected into each other using AngularJS Dependency Injection.</p>
+<h3>Value</h3>
+
+<p>In AngularJS, value is a simple object. It can be a number, string or JavaScript object. It is used to pass values in factories, services or controllers during run and config phase. </p>
+
+
+//define a module<br>
+var myModule = angular.module("myModule", []);  <br>
+//create a value object and pass it a data.<br>
+myModule.value("numberValue", 100);<br><br>
+
+
+<p>Here, values are defined using the value() function on the module. The first parameter specifies the name of the value, and the second parameter is the value itself. Factories, services and controllers can now reference these values by their name.</p>
+Injecting a value
+<p>To inject a value into AngularJS controller function, add a parameter with the same when the value is defined.</p>
+myModule.controller("MyController", function($scope, numberValue) {  
+console.log(numberValue);  
+});  
+<br>
+
+<h3>Factory :</h3>
+<p>Factory is a function that is used to return value. When a service or controller needs a value injected from the factory, it creates the value on demand. It normally uses a factory function to calculate and return the value.</p>
+<p>Note: It is not the factory function that is injected, but the value produced by the factory function.</p>
+
+<h3>Service :</h3>
+<p>In AngularJS, service is a JavaScript object which contains a set of functions to perform certain tasks. Services are created by using service() function on a module and then injected into controllers.</p>
+
+<h3>Provider :</h3>
+<p>In AngularJS, provider is used internally to create services, factory etc. during config phase (phase during which AngularJS bootstraps itself). It is the most flexible form of factory you can create. Provider is a special factory method with a get() function which is used to return the value/service/factory.</p>
+
+<h3>Constants : </h3>
+You cannot inject values into the module.config() function. Instead constants are used to pass values at config phase.
+mainApp.constant("configParam", "constant value");
+
+<h3>AngularJS Filters</h3>
+<p>In AngularJS, filters are used to format data. </p>
+
+<p>How to add filters to expressions</p>
+<p>You can add filters to expressions by using the pipe character |, followed by a filter.</p>
+
+<p>How to add filters to directives</p>
+<p>Filters can be added to directives, like ng-repeat, by using the pipe character |, followed by a filter.</p>
+
+<h2 id="directive-dv">Building Custom Directives</h2>
+
+<p>An Angular directive comes in four flavors in terms of appearance.</p>
+
+1. A new HTML element (&lt;date-picker&gt;&lt;/date&gt;).<br>
+2. An attribute on an element (&lt;input type="text" date-picker/&gt;).<br>
+3. As a class (&lt;input type="text" class="date-picker"/&gt;).<br>
+4. As comment (&lt;!--directive:date-picker--&gt;).<br><br>
+
+<p>How a typical directive is written in Angular ?</p>
+
+<p>It is registered in the same way as a controller, but it returns a simple object (directive definition) that has several properties to configure the directive.</p>
+
+<pre>
+//Hellow World directive
+var app = angular.module('myapp', []);
+
+app.directive('helloWorld', function() {
+  return {
+      restrict: 'AE',
+      replace: 'true',
+      template: '&lt;h3&gt;Hello World!!&lt;/h3&gt;'
+  };
+});
+
+</pre>
+<p>app.directive() function registers a new directive in our module. </p>
+<p>1)The first argument to this function is the directive name. </p>
+<p>2)The second argument is a function which returns a directive definition object</p>
+
+<p>If your directive has dependencies on external objects/services such as $rootScope, $http, or $compile, they can be injected here.</p>
+<p>The directive can be used in HTML </p>
+1. as an element  - &lt;hello-world/&gt;<br>
+2.as an attribute - &lt;div hello-world&gt;&lt;/div&gt;<br>
+<br>
+<ul><li><code>restrict</code> – This provides a way to specify how a directive should be used in HTML (remember a directive can appear in four ways). In this case we have set it to <code>'AE'</code>. So, the directive can be used as a new HTML element or an attribute. To allow this directive to be used as a class we can set <code>restrict</code> to <code>'AEC'</code>. </li>
+<li><code>template</code> – This specifies the HTML markup that will be produced when the directive is compiled and linked by Angular. This does not have to be a simple string. The <code>template</code> can be complex, often involving other directives, expressions (<code>{{ }}</code>), etc. In most cases you want to use <code>templateUrl</code> instead of <code>template</code>. So, ideally you should place the template in a separate HTML file and make <code>templateUrl</code> point to it.</li>
+<li><code>replace</code> – This specifies if the generated template will replace the HTML element on which the directive is attached. In our case we have used the directive as <code>&lt;hello-world&gt;&lt;/hello-world&gt;</code>, and <code>replace</code> is set to <code>true</code>. So, after the directive is compiled, the produced output template replaces <code>&lt;hello-world&gt;&lt;/hello-world&gt;</code>. The final output is <code>&lt;h3&gt;Hello World!!&lt;/h3&gt;</code>. If you set <code>replace</code> to <code>false</code>, the default, the output template will be inserted into the element on which the directive is invoked. </li>
+</ul>
+
+<h3>The <code>link</code> Function and Scope</h3>
+<p>The template produced by a directive is meaningless unless it’s compiled against the right scope. By default a directive does not get a new child scope. Rather, it gets the parent’s scope. This means that if the directive is present inside a controller it will use that controller’s scope. </p>
+<p>To utilize the scope, we can make use of a function called <code>link</code>. This is configured by the <code>link</code> property of the definition object. Let’s change our <code>helloWorld</code> directive so that when the user types a color name into an input field, the background color of Hello World text changes automatically. Also, when a user clicks on the text Hello World, the background color should reset to white. The HTML markup is shown below.</p>
+<pre>
+&lt;body ng-controller="MainCtrl"&gt;
+  &lt;input type="text" ng-model="color" placeholder="Enter a color" /&gt;
+  &lt;hello-world/&gt;
+&lt;/body&gt;
+</pre>
+<p>The modified <code>helloWorld</code> directive is shown below:</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    restrict: 'AE',
+    replace: true,
+    template: '&lt;p style="background-color:{{color}}"&gt;Hello World',
+    link: function(scope, elem, attrs) {
+      elem.bind('click', function() {
+        elem.css('background-color', 'white');
+        scope.$apply(function() {
+          scope.color = "white";
+        });
+      });
+      elem.bind('mouseover', function() {
+        elem.css('cursor', 'pointer');
+      });
+    }
+  };
+});
+</pre>
+<p>Notice the <code>link</code> function used in the directive. It takes three arguments:</p>
+<ul><li><code>scope</code> – The scope passed to the directive. In this case it’s the same as the parent controller scope.</li>
+<li><code>elem</code> – The jQLite (a subset of jQuery) wrapped element on which the directive is applied. If you have included jQuery in the HTML before AngularJS is included, this becomes jQuery wrapped instead of jQLite. As the element is already wrapped with jQuery/jQLite, there is no need to again wrap it inside <code>$()</code> for DOM manipulations. </li>
+<li><code>attrs</code> – An object representing normalized attributes attached to the element on which the directive is applied. For example, you can attach attributes in HTML like: <code>&lt;hello-world some-attribute&gt;&lt;/hello-world&gt;</code> and access it in the <code>link</code> function as <code>attrs.someAttribute</code>.</li>
+</ul>
+<p>The <code>link</code> function is mainly used for attaching event listeners to DOM elements, watching model properties for changes, and updating the DOM. In the previous directive snippet, we attached two listeners, <code>click</code> and <code>mouseover</code>. The <code>click</code> handler resets the background color of the <code>&lt;p&gt;</code>, while the <code>mouseover</code> handler changes the cursor to <code>pointer</code>. The template has an expression <code>{{color}}</code> which changes whenever the model <code>color</code> changes in the parent scope, thereby changing the background color of Hello World.  </p>
+<h3>The <code>compile</code> Function</h3>
+<p>The <code>compile</code> function is used to perform any DOM transformation before the <code>link</code> function runs. It accepts the following arguments.</p>
+<ul><li><code>tElement</code> – The element on which the directive is applied.</li>
+<li><code>attrs</code> – The normalized list of attributes declared on the element.</li>
+</ul>
+<p>Just note that the <code>compile</code> function does not have access to the <code>scope</code>, and must return a <code>link</code> function. But, if there is no <code>compile</code> function you can configure the <code>link</code> function as usual. The <code>compile</code> function can be written as:</p>
+<pre>
+app.directive('test', function() {
+  return {
+    compile: function(tElem,attrs) {
+      //do optional DOM transformation here
+      return function(scope,elem,attrs) {
+        //linking function here
+      };
+    }
+  };
+});
+</pre>
+<p>Most of the time, you will be working with the <code class=" language-undefined">link</code> function only. This is because most of the directives are concerned with registering event listeners, watchers, updating the DOM, etc., which are done inside the <code class=" language-undefined">link</code> function. Directives like <code class=" language-undefined">ng-repeat</code>, which need to clone and repeat the DOM element several times, use the <code class=" language-undefined">compile</code> function before the <code class=" language-undefined">link</code> function runs. This leads to a question of why two separate functions are needed. Why can’t we have just one? To answer this we need to understand how directives are compiled by Angular!</p>
+<h3>Changing a Directive’s Scope</h3>
+<p>By default a directive gets the parent’s scope. But we don’t want that in all cases. If we are exposing the parent controller’s <code class=" language-undefined">scope</code> to the directives, they are free to modify the <code class=" language-undefined">scope</code> properties. In some cases your directive may want to add several properties and functions to the scope that are for internal use only. If we are doing these things to parent’s scope, we are polluting it. So, we have two other options:</p>
+<ul><li>A child scope – This scope prototypically inherits the parent’s scope.</li>
+<li>An isolated scope – A new scope that does not inherit from the parent and exists on its own.</li>
+</ul>
+<p>The scope can be configured with the <code class=" language-undefined">scope</code> property of the directive definition object. An example of this is shown in the following snippet.</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: true,  // use a child scope that inherits from parent
+    restrict: 'AE',
+    replace: 'true',
+    template: '&lt;h3&lt;Hello World!!&lt;/h3&lt;'
+  };
+});
+</pre>
+<p>The above code asks Angular to give the directive a new child scope that prototypically inherits from parent scope. The other option, an isolated scope, is shown below.</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: {},  // use a new isolated scope
+    restrict: 'AE',
+    replace: 'true',
+    template: '&lt;h3&gt;Hello World!!&lt;/h3&gt;'
+  };
+});
+</pre>
+<p>This directive uses a new isolated scope that does not inherit from the parent. Isolated scopes are good when we want to create reusable components. By isolating the scope we guarantee that the directive is self contained and can be easily plugged into an HTML app. This provides the parent scope from becoming polluted, as it is not accessible inside the directive. In our modified <code class=" language-undefined">helloWorld</code> directive if you set <code class=" language-undefined">scope</code> to <code class=" language-undefined">{}</code> the code won’t work anymore. It will create an isolated scope for the directive and the expression <code class=" language-undefined">{{color}}</code> will now refer to that isolated scope property (not parent scope) which is <code class=" language-undefined">undefined</code>.   </p>
+<p>Isolating the scope does not mean that you have no access to the parent scope’s properties. There are techniques that allow you to access the parent scope’s properties and also watch for changes on them. We will discuss these techniques, and some more advanced concepts like <code class=" language-undefined">Controller</code> functions in part two of this series. Part two will also walk you through the creation of a fully fledged note taking app using Angular directives, so stay tuned!</p>
+<p>First, we will see how you can access parent scope’s properties inside your directive while maintaining an isolated scope. Next, we will discuss how to choose the correct scope for a directive by exploring concepts such as <code class=" language-undefined">controller</code> functions and transclusions. The article wraps up with a walkthrough of a note taking application.</p>
+<h2>Binding Between Isolated and Parent Scope Properties</h2>
+<p>Often, it’s convenient to isolate a directive’s scope, especially if you are manipulating many scope models. But, you may also need to access some parent scope properties inside the directive in order for the code to work. The good news is that Angular gives you enough flexibility to selectively pass parent scope properties to the directive through bindings.  </p>
+<p>Assume that the variable <code class=" language-undefined">app</code> is initialized and refers to the Angular module. The directive is shown below.</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: {},
+    restrict: 'AE',
+    replace: true,
+    template: '&lt;p style="background-color:{{color}}"&gt;Hello World&lt;/p&gt;',
+    link: function(scope, elem, attrs) {
+      elem.bind('click', function() {
+        elem.css('background-color','white');
+        scope.$apply(function() {
+          scope.color = "white";
+        });
+      });
+      elem.bind('mouseover', function() {
+        elem.css('cursor', 'pointer');
+      });
+    }
+  };
+});
+</pre>
+<p>The markup, with utilizes the directive is shown in the following code sample.</p>
+<pre>
+&lt;body ng-controller="MainCtrl"&gt;
+  &lt;input type="text" ng-model="color" placeholder="Enter a color"/&gt;
+  &lt;hello-world/&gt;
+&lt;/body&gt;
+</pre>
+<p>This code is not currently functional. Since we have an isolated scope, the expression <code class=" language-undefined">{{color}}</code> inside the directive template evaluates against this scope (not parent’s). But the <code class=" language-undefined">ng-model</code> directive on the input element refers to the parent scope property <code class=" language-undefined">color</code>. So, we need a way to bind these two isolated and parent scope properties. In Angular, this binding can be achieved by setting attributes on the directive element in HTML and configuring the <code class=" language-undefined">scope</code> property in the directive definition object. Let’s explore a few ways of setting up the binding.</p>
+<h3>Option 1: Use <code class=" language-undefined">@</code> for One Way Text Binding</h3>
+<p>In the directive definition, shown below, we have specified that the isolated scope property <code class=" language-undefined">color</code> should be bound to the attribute <code class=" language-undefined">colorAttr</code>, which is applied to the directive in the HTML. If you look at the markup, you can see the expression <code class=" language-undefined">{{color}}</code> is assigned to <code class=" language-undefined">color-attr</code>. When the value of the expression changes, the attribute <code class=" language-undefined">color-attr</code> also changes. This in turn changes the isolated scope property, <code class=" language-undefined">color</code>.</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: {
+      color: '@colorAttr'
+    },
+    ....
+    // the rest of the configurations
+  };
+});
+</pre>
+<p>The updated markup is shown below.</p>
+<pre>
+&lt;body ng-controller="MainCtrl"&gt;
+  &lt;input type="text" ng-model="color" placeholder="Enter a color"/&gt;
+  &lt;hello-world color-attr="{{color}}"/&gt;
+&lt;/body&gt;
+</pre>
+<p>We call this one way binding because with this technique you can only pass strings to the attribute (using expressions, <code class=" language-undefined">{{}}</code>). When the parent scope property changes, your isolated scope model also changes. You can even watch this scope property inside the directive and trigger tasks when a change occurs. However, the reverse is not true! You can’t change the parent scope model by manipulating the isolated scope.</p>
+
+<p><strong>Note:</strong><br>
+If the isolated scope property and the attribute name is same you can write the directive definition like this:</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: {
+      color: '@'
+    },
+    ....
+    // the rest of the configurations
+  };
+});
+</pre>
+<p>The directive is invoked in HTML like this:</p>
+<pre>
+&lt;hello-world color="{{color}}"/&gt;
+</pre>
+<h3>Option 2: Use <code class=" language-undefined">=</code> for Two Way Binding</h3>
+<p>Let’s change the directive definition as shown below.</p>
+<pre>
+app.directive('helloWorld', function() {
+  return {
+    scope: {
+      color: '='
+    },
+    ....
+    // the rest of the configurations
+  };
+});
+</pre>
+<p>And change the HTML like this:</p>
+<pre>
+&lt;body ng-controller="MainCtrl"&gt;
+  &lt;input type="text" ng-model="color" placeholder="Enter a color"/&gt;
+  &lt;hello-world color="color"/&gt;
+&lt;/body&gt;
+</pre>
+<p>Unlike <code class=" language-undefined">@</code>, this technique lets you assign an actual scope model to the attribute rather than just plain strings. As a result you can pass values ranging from simple strings and arrays to complex objects to the isolated scope. Also, a two way binding exists. Whenever the parent scope property changes, the corresponding isolated scope property also changes, and vice versa. As usual, you can watch this scope property for changes.</p>
+<h3>Option 3: Use <code class=" language-undefined">&amp;</code> to Execute Functions in the Parent Scope</h3>
+<p>It’s sometimes necessary to call functions defined in the parent scope from a directive with isolated scope. To refer to functions defined in outer scope we use <code class=" language-undefined">&amp;</code>. Let’s say we want to call a function <code class=" language-undefined">sayHello()</code> from the directive. The following code explains how it is achieved.</p>
+<pre>
+app.directive('sayHello', function() {
+  return {
+    scope: {
+      sayHelloIsolated: '&amp;' 
+    },
+    ....
+    // the rest of the configurations
+  };
+});
+</pre>
+<p>The directive is used in HTML like this:</p>
+<pre>
+&lt;body ng-controller="MainCtrl"&gt;
+  &lt;input type="text" ng-model="color" placeholder="Enter a color"/&gt;
+  &lt;say-hello sayHelloIsolated="sayHello()"/&gt;
+&lt;/body&gt;
+</pre>
+<h2>Parent Scope vs. Child Scope vs. Isolated Scope</h2>
+<p>As an Angular beginner one might get confused while choosing the right scope for a directive. By default a directive does not create a new scope and uses the parent’s scope. But in many cases this is not what we want. If your directive manipulates the parent scope properties heavily and creates new ones, it might pollute the scope. Letting all the directives use the same parent scope is not a good idea because anybody can modify our scope properties. So, the following guidelines may help you choose the right scope for your directive.</p>
+<ol><li><strong>Parent Scope</strong> (<code class=" language-undefined">scope: false</code>) – This is the default case. If your directive does not manipulate the parent scope properties you might not need a new scope. In this case, using the parent scope is okay.</li>
+<li><strong>Child Scope</strong> (<code class=" language-undefined">scope:true</code>) – This creates a new child scope for a directive which prototypically inherits from the parent scope. If the properties and functions you set on the scope are not relevant to other directives and the parent, you should probably create a new child scope. With this you also have all the scope properties and functions defined by the parent.</li>
+<li><strong>Isolated Scope</strong> (<code class=" language-undefined">scope:{}</code>) – This is like a sandbox! You need this if the directive you are going to build is self contained and reusable. Your directive might be creating many scope properties and functions which are meant for internal use, and should never be seen by the outside world. If this is the case, it’s better to have an isolated scope. The isolated scope, as expected, does not inherit the parent scope.</li>
+</ol>
+<h2 id="transclusion-dv">Transclusion</h2>
+<p>Transclusion is a feature which lets us wrap a directive around arbitrary content. We can later extract and compile it against the correct scope, and finally place it at the specified position in the directive template. If you set <code class=" language-undefined">transclude:true</code> in the directive definition, a new transcluded scope will be created which prototypically inherits from the parent scope. If you want your directive with isolated scope to contain an arbitrary piece of content and execute it against the parent scope, transclusion can be used.</p>
+<p>Let’s say we have a directive registered like this:</p>
+<pre>
+app.directive('outputText', function() {
+  return {
+    transclude: true,
+    scope: {},
+    template: '&lt;div ng-transclude&gt;&lt;/div&gt;'
+  };
+});
+</pre>
+<p>And it is used like this:</p>
+<pre>
+&lt;div output-text&gt;
+  &lt;p&gt;Hello {{name}}&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+<p><code class=" language-undefined">ng-transclude</code> says where to put the transcluded content. In this case the DOM content <code class=" language-undefined">&lt;p&gt;Hello {{name}}&lt;/p&gt;</code> is extracted and put inside <code class=" language-undefined">&lt;div ng-transclude&gt;&lt;/div&gt;</code>. The important point to remember is that the expression <code class=" language-undefined">{{name}}</code> interpolates against the property defined in the parent scope rather than the isolated scope.  </p>
+<h3>Differences Between <code class=" language-undefined">transclude:'element'</code> and <code class=" language-undefined">transclude:true</code></h3>
+<p>Sometimes we need to transclude the element on which the directive is applied rather than just the contents. In those cases <code class=" language-undefined">transclude:'element'</code> is used. This, unlike <code class=" language-undefined">transclude:true</code>, includes the element itself in the directive template marked with <code class=" language-undefined">ng-transclude</code>. As a result of transclusion your <code class=" language-undefined">link</code> function gets a transclude linking function prebound to the correct directive scope. This linking function is also passed another function with a clone of the DOM element which is to be transcluded. You can perform tasks like modifying the clone and adding it to the DOM. Directives like <code class=" language-undefined">ng-repeat</code> use this technique to repeat the DOM elements.  </p>
+<p>Also note that by using <code class=" language-undefined">transclude:'element'</code>, the element on which the directive is applied is converted into an HTML comment. So, if you combine <code class=" language-undefined">transclude:'element'</code> with <code class=" language-undefined">replace:false</code>, the directive template essentially gets <code class=" language-undefined">innerHTML</code>ed to the comment – which means nothing really happens! Instead, if you choose <code class=" language-undefined">replace:true</code> the directive template will replace the HTML comment and things will work as expected. Using <code class=" language-undefined">replace:false</code> with <code class=" language-undefined">transclude:'element'</code> is good for cases where you want to repeat the DOM element and don’t want to keep the first instance of the element (which is converted to a comment).</p>
+<h2>The <code class=" language-undefined">controller</code> Function and <code class=" language-undefined">require</code></h2>
+<p>The <code class=" language-undefined">controller</code> function of a directive is used if you want to allow other directives to communicate with yours. In some cases you may need to create a particular UI component by combining two directives. For example you can attach a <code class=" language-undefined">controller</code> function to a directive as shown below.</p>
+<pre>
+app.directive('outerDirective', function() {
+  return {
+    scope: {},
+    restrict: 'AE',
+    controller: function($scope, $compile, $http) {
+      // $scope is the appropriate scope for the directive
+      this.addChild = function(nestedDirective) { // this refers to the controller
+        console.log('Got the message from nested directive:' + nestedDirective.message);
+      };
+    }
+  };
+});
+</pre>
+<p>This code attaches a <code class=" language-undefined">controller</code> named <code class=" language-undefined">outerDirective</code> to the directive. When another directive wants to communicate, it needs to declare that it requires your directive’s <code class=" language-undefined">controller</code> instance. This is done as shown below.</p>
+<pre>
+app.directive('innerDirective', function() {
+  return {
+    scope: {},
+    restrict: 'AE',
+    require: '^outerDirective',
+    link: function(scope, elem, attrs, controllerInstance) {
+      //the fourth argument is the controller instance you require
+      scope.message = "Hi, Parent directive";
+      controllerInstance.addChild(scope);
+    }
+  };
+});
+</pre>
+<p>The markup would look something like this:</p>
+<pre>
+&lt;outer-directive&gt;
+  &lt;inner-directive&gt;&lt;/inner-directive&gt;
+&lt;/outer-directive&gt;
+</pre>
+<p><code class=" language-undefined">require: '^outerDirective'</code> tells Angular to search for the controller on the element and its parent. In this case the found <code class=" language-undefined">controller</code> instance is passed as the fourth argument to the <code class=" language-undefined">link</code> function. In our case we are sending the scope of the nested directive to the parent.  </p>
+</div>
+<!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>

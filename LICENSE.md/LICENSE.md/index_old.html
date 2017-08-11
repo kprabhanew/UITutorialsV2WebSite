@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angular Intro</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+<!--        <li class="active"><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>-->
+<li><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>
+        
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="angularjs_definitions.html">Definition</a></li>
+          <li><a href="angularjs_programs.html">Programs</a></li>
+          <li><a href="angularjs_examples.html">Examples</a></li>
+          <li><a href="angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="jQuery/advancedJs.html">Advanced JS</a></li>
+          <li><a href="jQuery_programs.html">Programs</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+<div class="col-sm-2" id="myScrollspy">
+  <nav >
+    <ul class="nav nav-pills nav-stacked left-menu" data-offset-top="50" data-spy="affix">
+      <li><a href="#navbar-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Navbar </a></li>
+      <li><a href="#dropdown-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Dropdown</a></li>
+      <li><a href="#tab-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Tabs</a></li>
+      <li><a href="#modal-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Modal</a></li>
+      <li><a href="#scroll-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Scrollspy</a></li>
+      <li><a href="#affix-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Affix</a></li>
+      <li><a href="#carousel-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Carousel</a></li>
+      <li><a href="#collapse-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Collapse</a></li>
+      <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Section 4 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tabs</a></li>
+          <li><a href="#">Modal</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-10">
+<!--navbar Start-->
+<div id="navbar-section">
+<h1>Creating a Simple Navbar with Bootstrap</h1>
+<p>You can use the Bootstrap navbar component to create responsive navigation header for your website or application. These responsive navbar initially collapsed on devices having small viewports like cell-phones but expand when user click the toggle button. However, it will be horizontal as normal on the medium and large devices like laptop or desktop.</p>
+<p>You can also create different variations of the navbar such as navbars with dropdown menus and search boxes as well as fixed positioned navbar with much less effort.</p>
+<div class="well note-box">
+Note:Use the classes <code>.navbar-left</code> or <code>.navbar-right</code> instead of <code>.pull-left</code> or <code>.pull-right</code> to align the nav links, forms, buttons or text inside the navbar.
+</div>
+<div class="well">
+A standard navigation bar is created with <code>&lt;nav class="navbar navbar-default"&gt</code>;
+</div>
+<pre>
+<h4>Basic Syntax : </h4>
+&lt;nav class="navbar navbar-default"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;div class="navbar-header"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;uitutorials.in&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;ul class="nav navbar-nav"&gt;
+      &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Page 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Page 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Page 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+<strong>Brand And Toggle Grouped</strong>
+
+&lt;nav role="navigation" class="navbar navbar-default"&gt;
+        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+        &lt;div class="navbar-header"&gt;
+            &lt;button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a href="#" class="navbar-brand"&gt;Brand&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;!-- Collection of nav links and other content for toggling --&gt;
+        &lt;div id="navbarCollapse" class="collapse navbar-collapse"&gt;
+            &lt;ul class="nav navbar-nav"&gt;
+                &lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul class="nav navbar-nav navbar-right"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Login&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+</pre>
+
+<div class="well tip-box">
+
+Tip:To create navbars that is not fixed on the top or bottom, place it anywhere within a <code>.container</code>, which sets the width of your site and content.
+</div>
+<h4>Bootstrap Fixed Navbar</h4>
+<p>Bootstrap also provides mechanism to create navbar that is fixed on the top or bottom of the viewport and will scroll with the content on the page.</p>
+<h4>Creating Navbar Fixed to Top</h4>
+<p>Add an extra class <code>.navbar-fixed-top</code> in addition to the <code>.navbar and .navbar-default</code> base class to create navbars that is fixed on the top.</p>
+<div class="well tip-box">
+Tip:Place the fixed <code>.navbar</code> content inside the <code>.container</code> or <code>.container-fluid</code> for proper padding and alignment with the rest of the content.
+</div>
+<h4>Creating Navbar Fixed to Bottom</h4>
+Similarly to create navbars that is fixed at the bottom add the class <code>.navbar-fixed-bottom</code>.
+<div class="well note-box">
+Note:Remember to add padding (at least 70px) to the top or bottom of the &lt;body&gt; element to avoid the content to go underneath the navbar while implementing fixed top or bottom navbar. Also be sure to add your custom style sheet after the core Bootstrap CSS file, otherwise it may not work.
+</div>
+<h4>Bootstrap Static Top Navbar</h4>
+You can also create full-width navbar that appears on the top but scrolls away with the page by adding the class <code>.navbar-static-top</code>. Unlike the <code>.navbar-fixed-top</code> class, you do not need to change any padding on the &lt;body&gt; element.
+
+<h4>Bootstrap Navbar with Search Form</h4>
+<p>Search form is very common component of the navbars and you have seen it on various website quite often. Search form can be placed inside the navbar using the class <code>.navbar-form</code> on the &lt;form&gt; element.</p>
+
+<h4>Creating the Inverted Variation of a Navbar</h4>
+<p>You can also create inverted variation of the Bootstrap navbar by adding an extra class <code>.navbar-inverse</code> to the <code>.navbar</code> base class, without any further change in markup.</p>
+
+
+<ol class="breadcrumb">
+  <li><a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"> School</a></li>
+  <li class="active"><a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank">Tutorial</a></li>  
+</ol>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank" class="list-group-item">Navigation Bars</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item ">Inverted Navigation Bar</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item ">Navigation Bar With Dropdown</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Right-Aligned Navigation Bar </a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Navbar Buttons </a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Navbar Forms</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Navbar Text</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Fixed Navigation Bar</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp" target="_blank"  class="list-group-item">Collapsing The Navigation Bar</a></li>
+</ul>
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank" class="list-group-item">Creating a Simple Navbar with Bootstrap</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank"  class="list-group-item ">Bootstrap Fixed Navbar</a></li>
+  <a href="https:http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank"  class="list-group-item ">Bootstrap Static Top Navbar</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank"  class="list-group-item">Bootstrap Navbar with Search Form</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-navbar.php" target="_blank"  class="list-group-item">Creating the Inverted Variation of a Navbar</a></li>
+
+</ul>
+</div>
+</div>
+
+
+
+</div> 
+<!--navbar End-->
+<!--dropdow div start-->
+<div class="row" id="dropdown-section"> 
+<div class="col-sm-12">
+<h1>Creating Dropdown Menus with Bootstrap</h1>
+<p>The dropdown menu is typically used inside the navigation header to display a list of related links when a user mouse hover or click on the trigger element.</p>
+<p>You can use the Bootstrap dropdown plugin to add toggleable dropdown menus (i.e. open and close on click) to almost anything such as links, buttons or button groups, navbar, tabs and pills nav etc. without even writing a single line of JavaScript code.</p>
+<h3>Adding Dropdowns via Data Attributes Mechanism</h3>
+<pre>
+&lt;div class="dropdown"&gt;
+    &lt;a href="#" data-toggle="dropdown" class="dropdown-toggle"&gt;Dropdown &lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+<p class="space">The above example demonstrates the most basic form of the Bootstrap dropdowns. Let's understand each part of the Bootstrap dropdown component one by one.</p>
+<p>Add <code>data-toggle="dropdown"</code> to a link or a button to toggle a dropdown menu.</p>
+<h3>Explanation of Code</h3>
+<p>The Bootstrap dropdown has basically two components — the dropdown trigger element which can be a hyperlink or button, and the dropdown menu itself.</p>
+<ul>
+                	<li>The <code>.dropdown</code> class specifies a dropdown menu.</li>
+                    <li>The <code>.dropdown-toggle</code> class defines the trigger element, which is a hyperlink in our case, whereas the attribute <code>data-toggle="dropdown"</code> is required on the trigger element to toggle the dropdown menu.</li>
+                    <li>The <code>.caret</code> element inside the trigger anchor element creates a small down triangle icon which indicates that the link contains a dropdown menu.</li>
+                    <li>The unordered list with the class <code>.dropdown-menu</code> is actually building the dropdown menu that typically contains the related links or actions.</li>
+                </ul>
+                <p>The previous example code has one small problem. If you click the dropdown link it will add a <code>#</code> character to the URL while showing the dropdowns. If you want to keep your URLs intact use the <code>data-target</code> attribute instead of <code>href="#"</code>, like this:</p>
+<div class="well tip-box">
+
+Tip:You can draw a divider line to separate the links inside a dropdown menu by adding the class .divider on a blank list element.
+</div>
+<h3>Adding Dropdowns via JavaScript</h3>
+<p>You may also add dropdowns manually using the JavaScript — just call the <code>dropdown()</code> Bootstrap method with the <code>id or class</code> selector of the link or button element in your JavaScript code.</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+    or
+    $(".dropdown-toggle").dropdown('toggle');
+});  
+&lt;/script&gt;
+
+&lt;div class="dropdown"&gt;
+        &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown &lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+        &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</pre>
+<div class="well note-box" >
+Note:The <code>data-toggle="dropdown"</code> is still required for the dropdown's trigger element regardless of whether you call the dropdown via JavaScript or data-api.
+</div>
+<table class="table table-striped table-responsive table-condensed table-bordered" >
+  <tbody><tr>
+    <th style="width:30%;">Class</th>
+    <th style="width:70%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>.dropdown</td>
+    <td>Indicates a dropdown menu</td>
+    
+  </tr>
+  <tr>
+    <td>.dropdown-menu</td>
+    <td>Builds the dropdown menu</td>
+    &nbsp;
+  </tr>
+  <tr>
+    <td>.dropdown-menu-right</td>
+    <td>Right-aligns a dropdown menu</td>
+    
+  </tr>
+  <tr>
+    <td>.dropdown-header</td>
+    <td>Adds a header inside the dropdown menu</td>
+    
+  </tr>
+  <tr>
+    <td>.dropup</td>
+    <td>Indicates a dropup menu</td>
+    
+  </tr>
+  <tr>
+    <td>.disabled</td>
+    <td>Disables an item in the dropdown menu</td>
+    
+  </tr>
+  <tr>
+    <td>.divider</td>
+    <td>Separates items inside the dropdown menu with a horizontal line</td>
+    
+  </tr>
+</tbody></table>
+<ol class="breadcrumb">
+  <li><a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"> School</a></li>
+  <li class="active"><a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank">Tutorial</a></li>  
+</ol>
+</div>
+</div> 
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank" class="list-group-item">
+Basic Dropdown</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item ">Dropdown Divider</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item ">Dropdown Header</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item">Disable and Active items</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item">Dropdown Position</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item">Dropup</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp" target="_blank"  class="list-group-item">Dropdown Accessibility</a></li>
+</ul>
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank" class="list-group-item">Dropdowns within a Navbar</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item ">Dropdowns within Navs</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item ">Dropdowns within Buttons</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Bootstrap Split Button Dropdowns</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Dropdowns Inside Button Groups</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Creating the Dropup Menus</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Creating the Right Aligned Dropdown Menus</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Adding Headers to Dropdown Items</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-dropdowns.php" target="_blank"  class="list-group-item">Disable Items within a Dropdown</a></li>
+  
+
+</ul>
+</div>
+</div>
+<!--dropdow div End-->
+<!--Tab Navigation Start-->
+<div class="row" id="tab-section">
+<div class="col-sm-12">
+<h1>Creating Tabs with Bootstrap</h1>
+<p>Tab based navigations provides an easy and powerful mechanism to handle huge amount of content within a small area through separating content into different panes where each pane is viewable one at a time.</p>
+
+<p>Tabs are created with <code>&lt;ul class="nav nav-tabs"&gt;</code>:</p>
+<p>Tip: Also mark the current page with <code>&lt;li class="active"&gt;</code>.</p>
+
+<p>Tabs are used to separate content into different panes where each pane is viewable one at a time.</p>
+<p>To make the tabs toggleable, add the <code>data-toggle="tab"</code> attribute to each link. Then add a <code>.tab-pane </code>class with a unique ID for every tab and wrap them inside a &lt;div&gt; element with class <code>.tab-content.</code></p>
+
+<p>If you want the tabs to fade in and out when clicking on them, add the .fade class to .tab-pane:</p>
+
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <th style="width:20%;">Class</th>
+    <th style="width:68%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>.nav nav-tabs</td>
+    <td>Creates navigation tabs</td>
+    
+  </tr>
+  <tr>
+    <td>.nav-justified</td>
+    <td>Makes navigation tabs/pills equal widths of their parent, at screens wider than 768px. On smaller screens, the nav tabs are stacked</td>
+    
+  </tr>
+  <tr>
+    <td>.tab-content</td>
+    <td>Together with .tab-pane and data-toggle="tab", it makes the tab toggleable</td>
+    
+  </tr>
+  <tr>
+    <td>.tab-pane</td>
+    <td>Together with .tab-content and data-toggle="tab", it makes the tab toggleable</td>
+    
+  </tr>
+</tbody></table>
+<h3>Via data-* Attributes</h3>
+<p>Add <code>data-toggle="tab"</code> to each tab, and add a <code>.tab-pane</code> class with a unique ID for every tab and wrap them in a <code>.tab-content</code> class.</p>
+<pre>
+&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="active"&gt;&lt;a data-toggle="tab" href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a data-toggle="tab" href="#menu1"&gt;Menu 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class="tab-content"&gt;
+  &lt;div id="home" class="tab-pane fade in active"&gt;
+    &lt;h3&gt;HOME&lt;/h3&gt;
+    &lt;p&gt;Some content.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="menu1" class="tab-pane fade"&gt;
+    &lt;h3&gt;Menu 1&lt;/h3&gt;
+    &lt;p&gt;Some content in menu 1.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h3>Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>
+// Select all tabs
+$('.nav-tabs a').click(function(){
+    $(this).tab('show');
+})
+
+// Select tab by name
+$('.nav-tabs a[href="#home"]').tab('show')
+
+// Select first tab
+$('.nav-tabs a:first').tab('show') 
+
+// Select last tab
+$('.nav-tabs a:last').tab('show') 
+
+// Select fourth tab (zero-based)
+$('.nav-tabs li:eq(3) a').tab('show')
+</pre>
+<table class="table table-striped table-bordered">
+  <tbody><tr>
+    <th>Method</th>
+    <th style="width:60%;">Description</th>
+
+  </tr>
+  <tr>
+    <td>.tab("show")</td>
+    <td>Shows the tab</td>
+
+  </tr>
+</tbody></table>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank" class="list-group-item">
+Menus</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item ">Tabs</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item ">Tabs With Dropdown Menu</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Pills</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Vertical Pills</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Vertical Pills in a Row</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Pills With Dropdown Menu</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Centered Tabs and Pills</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Toggleable / Dynamic Tabs</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp" target="_blank"  class="list-group-item">Toggleable / Dynamic Pills</a></li>
+</ul>
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-tabs.php" target="_blank" class="list-group-item">Creating Dynamic Tabs via Data Attributes</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-tabs.php" target="_blank"  class="list-group-item ">Creating Dynamic Tabs via JavaScript</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!--Tab Navigation End-->
+<!-- Modal Popup Strat -->
+<div class="row" id="modal-section">
+<div class="col-sm-12">
+<h1>JS Modal (modal.js)</h1>
+<p>The Modal plugin is a dialog box/popup window that is displayed on top of the current page.</p>
+
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <th style="width:25%;">Class</th>
+    <th style="width:75%;">Description</th>
+  </tr>
+  <tr>
+    <td>.modal</td>
+    <td>Creates a modal</td>
+  </tr>
+  <tr>
+    <td>.modal-content</td>
+    <td>Styles the modal properly with border, background-color, etc. Use this class to add the modal's header, body, and footer.</td>
+  </tr>
+  <tr>
+    <td>.modal-header</td>
+    <td>Defines the style for the header of the modal</td>
+  </tr>
+  <tr>
+    <td>.modal-body</td>
+    <td>Defines the style for the body of the modal</td>
+  </tr>
+  <tr>
+    <td>.modal-footer</td>
+    <td>Defines the style for the footer in the modal. <strong>Note:</strong> This area is right-aligned by default. To change this, overwrite CSS with text-align:left|center</td>
+  </tr>
+  <tr>
+    <td>.modal-sm</td>
+    <td>Specifies a small modal</td>
+  </tr>
+  <tr>
+    <td>.modal-lg</td>
+    <td>Specifies a large modal</td>
+  </tr>
+  <tr>
+    <td>.fade</td>
+    <td>Adds an animation/transition effect which fades the modal in and out</td>
+  </tr>
+</tbody></table>
+<h3>Trigger the Modal Via data-* Attributes</h3>
+<p>Add <code>data-toggle="modal"</code> and <code>data-target="#modalID"</code> to any element.</p>
+
+<p>Note: For &lt;a&gt; elements, omit <code>data-target</code>, and use <code>href="#modalID"</code> instead:</a>
+<pre>
+&lt;!-- Buttons --&gt;
+&lt;button type="button" data-toggle="modal" data-target="#myModal"&gt;Open Modal&lt;/button&gt;
+
+&lt;!-- Links --&gt;
+&lt;a data-toggle="modal" href="#myModal"&gt;Open Modal&lt;/a&gt;
+
+&lt;!-- Other elements --&gt;
+&lt;p data-toggle="modal" data-target="#myModal"&gt;Open Modal&lt;/p&gt;
+</pre>
+<h2>Explanation of Code</h2>
+<p>To activate a Bootstrap modal via data attributes we basically need two components — the controller element like a button or link, and the modal element itself.</p>
+<ul>
+                	<li>The outermost container of every modal in a document must have a unique id (in this case <code>id="myModal"</code>), so that it can be targeted via <code>data-target</code> (for buttons) or <code>href</code> (for hyperlinks) attribute of the controller element.</li>
+                    <li>The attribute <code>data-toggle="modal"</code> is required to add on the controller element, like a button or an anchor, along with a attribute <code>data-target="#myModal"</code> or <code>href="#myModal"</code> to target a specific modal to toggle.</li>
+                    <li>The <code>.modal-dialog</code> class sets the width as well as horizontal and vertical alignment of the modal box. Whereas the class <code>.modal-content</code> sets the styles like text and background color, borders, rounded corners etc.</li>
+                </ul>
+                <div class="well note-box">
+                Note:The .fade class on the .modal element adds a fading and sliding animation effect while showing and hiding the modal window. If you want the modal that simply appear without any effect you can just remove this class.
+                </div>
+<h3>Trigger Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>
+$("#myModal").modal();
+<strong>Example :</strong>
+&lt;script type="text/javascript"&gt;
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $("#myModal").modal('show');
+    });
+});
+&lt;/script&gt;
+</pre>
+<h3>Changing the Sizes of Modals</h3>
+<p>Bootstrap gives you option further to scaling a modal up or down. You can make modals larger or smaller by adding an extra class <code>.modal-lg or .modal-sm on .modal-dialog</code>.</p>
+<h3>Changing Modal Content Based on Trigger Button</h3>
+Often several modal on a web page has almost same content with minor differences.
+You can use the modal events to create slightly different modal windows based on the same modal HTML. The following example will change the title of the modal window according to the trigger button's <code>data-title </code>attribute value.
+<h3>Modal Options</h3>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to data-, as in data-backdrop="".</p>
+<table class="table table-bordered table-striped" >
+  <tbody><tr>
+    <th style="width:14%;">Name</th>
+    <th style="width:16%;">Type</th>
+    <th style="width:10%;">Default</th>
+    <th style="width:52%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>backdrop</td>
+    <td>boolean or the string "static"</td>
+    <td>true</td>
+    <td>
+ Specifies whether the modal should have a dark overlay:<br><br>
+ <ul>
+  <li>true - dark overlay</li> 
+  <li>false - no overlay (transparent)</li>
+ </ul>
+ <p>If you specify the value "static", it is not possible to close the modal when clicking outside of it</p>
+  </td>
+    
+  </tr>
+  <tr>
+    <td>keyboard</td>
+    <td>boolean</td>
+    <td>true</td>
+    <td>Specifies whether the modal can be closed with the escape key (Esc):<br><br>
+    <ul>
+  <li>true - the modal can be closed with Esc</li> 
+  <li>false - the modal cannot be closed with Esc</li>
+ </ul>
+  </td>
+    
+  </tr>
+  <tr>
+    <td>show</td>
+    <td>boolean</td>
+    <td>true</td>
+    <td>Specifies whether to show the modal when initialized</td>
+    
+  </tr>
+</tbody></table>
+<h3>Modal Methods</h3>
+<p>The following table lists all available modal methods.</p>
+<table class="table table-bordered table-striped" >
+  <tbody><tr>
+    <th>Method</th>
+    <th style="width:60%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>.modal(<em>options</em>)</td>
+    <td>Activates the content as a modal. See options above for valid values</td>
+    
+  </tr>
+  <tr>
+    <td>.modal("toggle")</td>
+    <td>Toggles the modal</td>
+    
+  </tr>
+  <tr>
+    <td>.modal("show")</td>
+    <td>Opens the modal</td>
+    
+  </tr>
+  <tr>
+    <td>.modal("hide")</td>
+    <td>Hides the modal</td>
+
+    </tr>
+</tbody></table>
+</div>
+</div>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp" target="_blank" class="list-group-item">The Modal Plugin</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp" target="_blank"  class="list-group-item ">How To Create a Modal</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp" target="_blank"  class="list-group-item ">Modal Size</a></li>
+</ul>
+
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php" target="_blank" class="list-group-item">
+Activate Modals via JavaScript</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php" target="_blank"  class="list-group-item ">Changing the Sizes of Modals</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php" target="_blank"  class="list-group-item ">Changing Modal Content Based on Trigger Button</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php" target="_blank"  class="list-group-item">.modal(options)</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-modals.php" target="_blank"  class="list-group-item">.modal('toggle')</a></li>
+</ul>
+</div>
+</div>
+<!-- Modal Popup End -->
+<!--Scroll Spy Started -->
+<div class="row" id="scroll-section">
+<div class="col-sm-12">
+<h1>The Scrollspy Plugin</h1>
+<p>The Scrollspy plugin is used to automatically update links in a navigation list based on scroll position.</p>
+<p><strong>Tip:</strong> The Scrollspy plugin is often used together with the
+<a href="bootstrap_ref_js_affix.asp">Affix</a> plugin.</p>
+<p class="well"><strong>Requires relative positioning: </strong>The element with 
+data-spy="scroll" 
+requires the CSS <strong>position</strong> property, with a value of "relative" 
+to work properly.</p>
+<h3>How To Create a Scrollspy</h3>
+<p>The following example shows how to create a scrollspy:</p>
+<pre>
+&lt;!-- The scrollable area --&gt;
+&lt;body data-spy="scroll" data-target=".navbar" data-offset="50"&gt;
+
+&lt;!-- The navbar - The &lt;a&gt; elements are used to jump to a section in the scrollable area --&gt;
+&lt;nav class="navbar navbar-inverse navbar-fixed-top"&gt;
+...
+  &lt;ul class="nav navbar-nav"&gt;
+    &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+    ...
+&lt;/nav&gt;
+
+&lt;!-- Section 1 --&gt;
+&lt;div id="section1"&gt;
+  &lt;h1&gt;Section 1&lt;/h1&gt;
+  &lt;p&gt;Try to scroll this page and look at the navigation bar while scrolling!&lt;/p&gt;
+&lt;/div&gt;
+...
+
+&lt;/body&gt;
+</pre>
+
+<h3>Via data-* Attributes</h3>
+<p>Add <code class="w3-codespan">data-spy="scroll"</code> to the element that should be used as the scrollable 
+area (often this is the <code class="w3-codespan">&lt;body&gt;</code> element).</p>
+<p>Then add the <code class="w3-codespan">data-target</code> attribute with a value of the id or the class name 
+of the navigation bar (<code class="w3-codespan">.navbar</code>). This is to make sure that the navbar 
+is connected with the scrollable area.</p>
+<p>Note that scrollable elements must match the ID of the links inside the navbar's 
+list items 
+(<code class="w3-codespan">&lt;div id="section1"&gt;</code> matches <code class="w3-codespan">&lt;a href="#section1"&gt;</code>).</p>
+<p>The optional <code class="w3-codespan">data-offset</code> attribute specifies the number of pixels to offset 
+from top when calculating the position of scroll. This is useful when you feel 
+that the links inside the navbar changes the active state too soon or too early 
+when jumping to the scrollable elements. Default is 10 pixels.</p>
+
+<h3>Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>
+$('body').scrollspy({target: ".navbar"})
+</pre>
+<h3>Scrollspy Options</h3>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset=""</code>.</p>
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:10%;">Default</th>
+    <th style="width:45%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>number</td>
+    <td>10</td>
+    <td>
+ Specifies the number of pixels to offset from top when calculating the position of scroll</td>
+  </tr>
+</tbody></table>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp" target="_blank" class="list-group-item">Scrollspy Methods</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp" target="_blank"  class="list-group-item ">Scrollspy Options</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp" target="_blank"  class="list-group-item ">Scrollspy with animated scroll</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp" target="_blank"  class="list-group-item ">Scrollspy & Affix</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp" target="_blank"  class="list-group-item ">Horizontal/Vertical Menu (Navbar)</a></li>
+</ul>
+
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-scrollspy.php" target="_blank" class="list-group-item">
+Creating ScrollSpy with Bootstrap</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-scrollspy.php" target="_blank"  class="list-group-item ">Creating ScrollSpy via Data Attributes</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-scrollspy.php" target="_blank"  class="list-group-item ">Creating ScrollSpy via JavaScript</a></li>
+  
+</ul>
+</div>
+</div> <!-- Examples -->
+</div>
+</div>
+<!--Scroll Spy End -->
+<!-- Affox Start -->
+<div class="row" id="affix-section">
+<div class="col-sm-12">
+<h3>JS Affix (affix.js)</h3>
+<p>The Affix plugin allows an element to become affixed (locked) to an area on the page. This is often used with navigation menus or social icon buttons, to make them "stick" at a specific area while scrolling up and down the page.</p>
+
+<p>The plugin toggles this behavior on and off (changes the value of CSS position from static to fixed), depending on scroll position.</p>
+<p>The affix plugin toggles between three classes: <code class="w3-codespan">.affix</code>, <code class="w3-codespan">.affix-top</code>, and 
+<code class="w3-codespan">.affix-bottom</code>. Each class represents a particular state. You must add CSS 
+properties to handle the actual positions, with the exception of <code class="w3-codespan">position:fixed</code> 
+on the <code class="w3-codespan">.affix</code> class.</p>
+
+<h3>Via data-* Attributes</h3>
+<p>Add <code class="w3-codespan">data-spy="affix"</code> to the element you want to spy on, 
+and the <code class="w3-codespan">data-offset-top|bottom="<em>number</em>"</code> 
+attribute to calculate the position of the scroll.</p>
+<pre>
+&lt;ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205"&gt;
+</pre>
+<h3>Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>
+$('.nav').affix({offset: {top: 150} });
+</pre>
+<h3>Affix Options</h3>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to data-, as in data-offset="".</p>
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:10%;">Default</th>
+    <th style="width:52%;">Description</th>
+  </tr>
+  <tr>
+    <td>offset</td>
+    <td>number | object | function</td>
+    <td>10</td>
+    <td>
+ Specifies the number of pixels to offset from screen when calculating position of scroll. When using a single number, the offset is added to both top and bottom directions. If you only want to control the top or the bottom, use an object, like <code class="w3-codespan">offset: {top:25}</code><br><br>For multiple offsets, use <code class="w3-codespan">offset: {top:25, bottom:50}</code><br><br><strong>Tip:</strong> Use a function to dynamically provide an offset (can be useful for responsive designs)</td>
+  </tr>
+  <tr>
+    <td>target</td>
+    <td>selector | node | element</td>
+    <td>the window object</td>
+    <td>
+ Specifies the target element of the affix</td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp" target="_blank" class="list-group-item">Affixed navbar</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp" target="_blank"  class="list-group-item ">Automatically affix a navbar</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp" target="_blank"  class="list-group-item ">Scrollspy & Affix</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp" target="_blank"  class="list-group-item ">Vertical Menu (Sidenav)</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp" target="_blank"  class="list-group-item ">Animated navbar on affix</a></li>
+</ul>
+
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-affix.php" target="_blank" class="list-group-item">
+Creating Pinned Element with Bootstrap</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-affix.php" target="_blank"  class="list-group-item ">Enable Affix via Data Attributes</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-affix.php" target="_blank"  class="list-group-item ">Enable Affix via JavaScript</a></li>
+</ul>
+</div>
+</div>
+<!-- Affix End -->
+<!-- Carousel Strat -->
+<div class="row" id="carousel-section">
+<div class="col-sm-12">
+<h1>JS Carousel (carousel.js)</h1>
+<p>The Carousel plugin is a component for cycling through elements, like a carousel (slideshow).</p>
+<p>Note: Carousels are not supported properly in Internet Explorer 9 and earlier (because they use CSS3 transitions and animations to achieve the slide effect).</p>
+<h3>The Carousel Plugin Classes</h3>
+<table class="table table-striped table-bordered">
+  <tbody><tr>
+    <th style="width:30%;">Class</th>
+    <th style="width:70%;">Description</th>
+  </tr>
+  <tr>
+    <td>.carousel</td>
+    <td>Creates a carousel</td>
+  </tr>
+  <tr>
+    <td>.slide</td>
+    <td>Adds a CSS transition and animation effect when sliding from one item to the next. Remove this class if you do not want this effect</td>
+  </tr>
+  <tr>
+    <td>.carousel-indicators</td>
+    <td>Adds indicators for the carousel. These are the little dots at the bottom of each slide (which indicates how many slides there are in the carousel, and which slide the user are currently viewing)</td>
+  </tr>
+  <tr>
+    <td>.carousel-inner</td>
+    <td>Adds slides to the carousel</td>
+  </tr>
+  <tr>
+    <td>.icon-next</td>
+    <td>Unicode icon (arrow pointing right), used in carousels. This is often used instead of a glyphicon</td>
+  </tr>
+  <tr>
+    <td>.icon-prev</td>
+    <td>Unicode icon (arrow pointing left), used in carousels. This is often used instead of a glyphicon</td>
+  </tr>
+  <tr>
+    <td>.item</td>
+    <td>Specifies the content of each slide</td>
+  </tr>
+  <tr>
+    <td>.left carousel-control</td>
+    <td>Adds a left button to the carousel, which allows the user to go back between the slides</td>
+  </tr>
+  <tr>
+    <td>.right carousel-control</td>
+    <td>Adds a right button to the carousel, which allows the user to go forward between the slides</td>
+  </tr>
+  <tr>
+    <td>.carousel-caption</td>
+    <td>Specifies a caption for the carousel</td>
+  </tr>
+</tbody></table>
+<h3>Via data-* Attributes</h3>
+<p>The <code class="w3-codespan">data-ride="carousel"</code> attribute activates the carousel.</p>
+<p>The <code class="w3-codespan">data-slide</code> and <code class="w3-codespan">data-slide-to</code> attributes specifies which slide to go to.</p>
+<p>The <code class="w3-codespan">data-slide</code> attribute accepts two values: <strong>prev</strong> or 
+<strong>next</strong>, while 
+<code class="w3-codespan">data-slide-to</code> accept numbers.</p>
+<pre>
+&lt;!-- Carousel --&gt;
+&lt;div id="myCarousel" class="carousel slide" data-ride="carousel"&gt;
+
+&lt;!-- Carousel Indicators --&gt;
+&lt;li data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+
+&lt;!-- Carousel Controls --&gt;
+&lt;a class="left carousel-control" href="#myCarousel" data-slide="prev"&gt;
+</pre>
+<h3>Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>
+// Activate Carousel
+$("#myCarousel").carousel();
+
+// Enable Carousel Indicators
+$(".item").click(function(){
+    $("#myCarousel").carousel(1);
+});
+
+// Enable Carousel Controls
+$(".left").click(function(){
+    $("#myCarousel").carousel("prev");
+});
+</pre>
+<h3>Carousel Options</h3>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to data-, as in data-interval="".</p>
+<table class="table table-striped table-bordered">
+  <tbody><tr>
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:10%;">Default</th>
+    <th style="width:52%;">Description</th>
+    
+  </tr>
+  <tr>
+    <td>interval</td>
+    <td>number, or the boolean false</td>
+    <td>5000</td>
+    <td>
+ Specifies the delay (in milliseconds) between each slide.<br><br><strong>
+ Note:</strong> Set interval to <strong>false</strong> to stop the items from automatically sliding</td>
+    
+  </tr>
+  <tr>
+    <td>pause</td>
+    <td>string, or the boolean false</td>
+    <td>"hover"</td>
+    <td>Pauses the carousel from going through the next slide when the mouse pointer enters the carousel, and resumes the sliding when the mouse pointer leaves the carousel<br><br><strong>Note:</strong> Set pause to <strong>false</strong> to stop the ability to pause on hover</td>
+    
+  </tr>
+  <tr>
+    <td>wrap</td>
+    <td>boolean</td>
+    <td>true</td>
+    <td>Specifies whether the carousel should go through all slides continuously, or stop at the last slide<br><br>
+    <ul>
+  <li>true - cycle continuously</li> 
+  <li>false - stop at the last item</li>
+ </ul>
+   </td>
+    
+  </tr>
+</tbody></table>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp" target="_blank" class="list-group-item">Carousel Methods</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp" target="_blank"  class="list-group-item ">Carousel Events</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp" target="_blank"  class="list-group-item ">Captions to Slides</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank"  class="list-group-item ">How To Create a Carousel</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank"  class="list-group-item ">Add Captions to Slides</a></li>
+</ul>
+
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-carousel.php" target="_blank" class="list-group-item">Carousels with Bootstrap</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-carousel.php" target="_blank"  class="list-group-item ">Activate Carousels via Data Attributes</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-carousel.php" target="_blank"  class="list-group-item ">Activate Carousels via JavaScript</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-carousel.php" target="_blank" class="list-group-item">Disable Auto Sliding in Bootstrap Carousel</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-carousel.php" target="_blank"  class="list-group-item ">Methods</a></li>
+</ul>
+</div>
+</div>
+</div> <!-- Col End -->
+</div> <!-- Carousel End -->
+<div class="row" id="collapse-section">
+<div class="col-sm-12">
+JS Collapse (collapse.js)
+Get base styles and flexible support for collapsible components like accordions and navigation.
+
+Plugin dependency: Collapse requires the transitions plugin to be included in your version of Bootstrap.
+The Collapse Plugin Classes
+<table class="w3-table-all notranslate">
+  <tbody><tr>
+    <th style="width:20%;">Class</th>
+    <th style="width:68%;">Description</th>
+    <th style="width:8%;">Example</th>
+  </tr>
+  <tr>
+    <td>.collapse</td>
+    <td>Hides the content</td>
+    <td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=trybs_ref_js_collapse_simple&amp;stacked=h">Try it</a></td>
+  </tr>
+  <tr>
+    <td>.collapse in</td>
+    <td>Shows the content</td>
+    <td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=trybs_ref_js_collapse_simple_in&amp;stacked=h">Try it</a></td>
+  </tr>
+  <tr>
+    <td>.collapsing</td>
+    <td>Added when the transition starts, and removed when it finishes</td>
+    <td><a target="_blank" class="w3-btn btnsmall" href="tryit.asp?filename=trybs_ref_js_collapse_collapsing&amp;stacked=h">Try it</a></td>
+  </tr>
+</tbody></table>
+<h3>Via data-* Attributes</h3>
+<p>Just add data-toggle="collapse" and a data-target to element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.</p>
+<pre>
+&lt;button class="btn" data-toggle="collapse" data-target="#demo"&gt;Collapsible&lt;/button&gt;
+
+&lt;div id="demo" class="collapse"&gt;
+Some text..
+&lt;/div&gt;
+</pre>
+<p>Tip:To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector".</p>
+<h3>Via JavaScript</h3>
+<p>Enable manually with:</p>
+<pre>$('.collapse').collapse()</pre>
+Collapse Options
+Options can be passed via data attributes or JavaScript. For data attributes, append the option name to data-, as in data-parent="".
+<table class="table table-bordered table-striped">
+  <tbody><tr>
+    <th style="width:15%;">Name</th>
+    <th style="width:15%;">Type</th>
+    <th style="width:15%;">Default</th>
+    <th style="width:55%;">Description</th>
+  </tr>
+  <tr>
+    <td>parent</td>
+    <td>selector</td>
+    <td>false</td>
+    <td>All collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the panel class) - See example below</td>
+  </tr>
+  <tr>
+    <td>toggle</td>
+    <td>boolean</td>
+    <td>true</td>
+    <td>Toggles the collapsible element on invocation</td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+<h3>Examples</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank" class="list-group-item">Collapse Methods</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Collapse Events</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Simple Collapsible</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Collapsible Panel</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Collapsible List Group</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Accordion</a></li>
+  <a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp" target="_blank"  class="list-group-item ">Expand and Collapse Toggle Icon & Text</a></li>
+  
+</ul>
+
+</div>
+<div class="col-sm-6">
+<ul class="list-group">
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-accordion.php" target="_blank" class="list-group-item">Creating Accordion Widget with Bootstrap</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-accordion.php" target="_blank"  class="list-group-item ">Expanding and Collapsing Elements via Data Attributes</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-accordion.php" target="_blank"  class="list-group-item ">Expanding and Collapsing Elements via JavaScript</a></li>
+  <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-accordion.php" target="_blank" class="list-group-item">Methods</a></li>
+  
+</ul>
+</div>
+</div>
+<!-- Collapse End -->
+
+
+
+</div> <!--Right Column Wrapper End -->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>
